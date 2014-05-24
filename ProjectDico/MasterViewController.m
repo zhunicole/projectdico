@@ -220,4 +220,8 @@
     cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
 }
 
+- (IBAction)goToMasterViewController :(UIStoryboardSegue*)segue {
+    
+}
+
 @end

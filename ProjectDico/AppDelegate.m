@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 ProjectDico. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "AppDelegate.h"
-
 #import "MasterViewController.h"
 
 @implementation AppDelegate
@@ -18,10 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Parse setApplicationId:@"MCMwZBT970NiCf0DWZnY6vTSAie6yWzL0uX1LJqY"
+                  clientKey:@"XMSccs2XzqjtOHbYvOsjZhPvzBhua9nDSZEZjRkr"];
+//    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions]; //ANALYTICS
     // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    //DEBUGGIN MODE
+    MasterViewController *controller = nil; //(MasterViewController *)navigationController.topViewController;
+    controller.managedObjectContext = nil; //self.managedObjectContext;
     return YES;
 }
 							
