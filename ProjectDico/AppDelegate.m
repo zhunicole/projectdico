@@ -7,25 +7,36 @@
 //
 
 #import <Parse/Parse.h>
+#import "Reachability.h"
 #import "AppDelegate.h"
 #import "MasterViewController.h"
 #import "LoginViewController.h"
-@implementation AppDelegate
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Parse setApplicationId:@"MCMwZBT970NiCf0DWZnY6vTSAie6yWzL0uX1LJqY"
                   clientKey:@"XMSccs2XzqjtOHbYvOsjZhPvzBhua9nDSZEZjRkr"];
-    //    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions]; //ANALYTICS
-    //    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    //DEBUGGIN MODE
-//    MasterViewController *controller = nil; //(MasterViewController *)navigationController.topViewController;
-//    controller.managedObjectContext = nil; //self.managedObjectContext;
-
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
+    if (application.applicationIconBadgeNumber !=0) {
+        application.applicationIconBadgeNumber = 0;
+        [[PFInstallation currentInstallation] saveInBackground]; //saves async in background
+    }
+    
+    PFACL *defaultACL = [PFACL ACL]; //read/write permissions to spec users
+    [defaultACL setPublicReadAccess:YES]; //public read access by default
+    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
+    
+    [self setupAppearance];  //TODO, if need to initialize view any more
+    
+    [self monitorReachability];
+    
+    self.welcomeViewController = [[WelcomeViewController alloc] init];
+    
     
     [PFFacebookUtils initializeFacebook];
 
@@ -68,95 +79,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+
 }
 
-- (void)saveContext
-{
-    NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        } 
-    }
-}
 
-#pragma mark - Core Data stack
-
-// Returns the managed object context for the application.
-// If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
-- (NSManagedObjectContext *)managedObjectContext
-{
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-    }
-    return _managedObjectContext;
-}
-
-// Returns the managed object model for the application.
-// If the model doesn't already exist, it is created from the application's model.
-- (NSManagedObjectModel *)managedObjectModel
-{
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ProjectDico" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
-}
-
-// Returns the persistent store coordinator for the application.
-// If the coordinator doesn't already exist, it is created and the application's store added to it.
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
-    }
-    
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ProjectDico.sqlite"];
-    
-    NSError *error = nil;
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
-         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }    
-    
-    return _persistentStoreCoordinator;
-}
 
 #pragma mark - Application's Documents directory
 
@@ -167,6 +93,58 @@
 }
 
 
+#pragma mark - TODO methods to remove/replace
+
+// Set up appearance parameters to achieve Anypic's custom look and feel
+- (void)setupAppearance {
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+//    
+//    NSShadow *shadow = [[NSShadow alloc] init];
+//    shadow.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.750f];
+//    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
+//    
+//    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.498f green:0.388f blue:0.329f alpha:1.0f]];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{
+//                                                           NSForegroundColorAttributeName: [UIColor whiteColor],
+//                                                           NSShadowAttributeName: shadow
+//                                                           }];
+//    
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"BackgroundNavigationBar.png"]
+//                                       forBarMetrics:UIBarMetricsDefault];
+//    
+//    [[UIButton appearanceWhenContainedIn:[UINavigationBar class], nil]
+//     setTitleColor:[UIColor colorWithRed:214.0f/255.0f green:210.0f/255.0f blue:197.0f/255.0f alpha:1.0f]
+//     forState:UIControlStateNormal];
+//    
+//    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
+//                                                           NSForegroundColorAttributeName:
+//                                                               [UIColor colorWithRed:214.0f/255.0f green:210.0f/255.0f blue:197.0f/255.0f alpha:1.0f],
+//                                                           NSShadowAttributeName: shadow
+//                                                           }
+//                                                forState:UIControlStateNormal];
+//    
+//    [[UISearchBar appearance] setTintColor:[UIColor colorWithRed:32.0f/255.0f green:19.0f/255.0f blue:16.0f/255.0f alpha:1.0f]];
+}
+
+- (void) monitorReachability {
+//    Reachability *hostReach = [Reachability reachabilityWithHostname:@"api.parse.com"];
+//    
+//    hostReach.reachableBlock = ^(Reachability*reach) {
+//        _networkStatus = [reach currentReachabilityStatus];
+//        
+//        if ([self isParseReachable] && [PFUser currentUser] && self.MasterViewController.objects.count == 0) {
+//            // Refresh home timeline on network restoration. Takes care of a freshly installed app that failed to load the main timeline under bad network conditions.
+//            // In this case, they'd see the empty timeline placeholder and have no way of refreshing the timeline unless they followed someone.
+//            [self.MasterViewController loadObjects];
+//        }
+//    };
+//    
+//    hostReach.unreachableBlock = ^(Reachability*reach) {
+//        _networkStatus = [reach currentReachabilityStatus];
+//    };
+//    
+//    [hostReach startNotifier];
+}
 
 
 

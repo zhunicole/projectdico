@@ -38,6 +38,10 @@
 		D171D39019316B1E007F525D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D171D38F19316B1E007F525D /* FacebookSDK.framework */; };
 		D171D39319316F08007F525D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D171D39219316F08007F525D /* LoginViewController.m */; };
 		D171D39719317150007F525D /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D171D39619317150007F525D /* UserDetailsViewController.m */; };
+		D17692731932B1D50096A662 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692721932B1D50096A662 /* Constants.m */; };
+		D17692781932B60F0096A662 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692771932B60F0096A662 /* Reachability.m */; };
+		D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927A1932B7AF0096A662 /* WelcomeViewController.m */; };
+		D176927E1932B82D0096A662 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927D1932B82D0096A662 /* Utility.m */; };
 		D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6E919315B500035FCFF /* CategoryTVC.m */; };
 		D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */; };
 /* End PBXBuildFile section */
@@ -91,6 +95,14 @@
 		D171D39219316F08007F525D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		D171D39519317150007F525D /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		D171D39619317150007F525D /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		D17692711932B1D50096A662 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		D17692721932B1D50096A662 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		D17692761932B60F0096A662 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D17692771932B60F0096A662 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D17692791932B7AF0096A662 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		D176927A1932B7AF0096A662 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		D176927C1932B82D0096A662 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		D176927D1932B82D0096A662 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		D1E7C6E819315B500035FCFF /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		D1E7C6E919315B500035FCFF /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoryTVC.h; sourceTree = "<group>"; };
@@ -140,6 +152,7 @@
 				D13D21721931422800527710 /* ProjectDico */,
 				D13D21981931422800527710 /* ProjectDicoTests */,
 				D13D21691931422700527710 /* Frameworks */,
+				D17692751932B5BD0096A662 /* Vendor */,
 				D13D21681931422700527710 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -179,6 +192,7 @@
 		D13D21721931422800527710 /* ProjectDico */ = {
 			isa = PBXGroup;
 			children = (
+				D17692741932B1E20096A662 /* Helper */,
 				D13D217B1931422800527710 /* AppDelegate.h */,
 				D13D217C1931422800527710 /* AppDelegate.m */,
 				D13D217E1931422800527710 /* Main.storyboard */,
@@ -222,12 +236,34 @@
 		D171D39419316F12007F525D /* UserAccounts */ = {
 			isa = PBXGroup;
 			children = (
+				D17692791932B7AF0096A662 /* WelcomeViewController.h */,
+				D176927A1932B7AF0096A662 /* WelcomeViewController.m */,
 				D171D39119316F08007F525D /* LoginViewController.h */,
 				D171D39219316F08007F525D /* LoginViewController.m */,
 				D171D39519317150007F525D /* UserDetailsViewController.h */,
 				D171D39619317150007F525D /* UserDetailsViewController.m */,
 			);
 			name = UserAccounts;
+			sourceTree = "<group>";
+		};
+		D17692741932B1E20096A662 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D176927C1932B82D0096A662 /* Utility.h */,
+				D176927D1932B82D0096A662 /* Utility.m */,
+				D17692711932B1D50096A662 /* Constants.h */,
+				D17692721932B1D50096A662 /* Constants.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		D17692751932B5BD0096A662 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				D17692761932B60F0096A662 /* Reachability.h */,
+				D17692771932B60F0096A662 /* Reachability.m */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 		D1E7C6EE19315B750035FCFF /* Controllers */ = {
@@ -349,12 +385,16 @@
 				D171D39319316F08007F525D /* LoginViewController.m in Sources */,
 				D13D21891931422800527710 /* DetailViewController.m in Sources */,
 				D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */,
+				D17692781932B60F0096A662 /* Reachability.m in Sources */,
 				D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */,
+				D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */,
 				D13D21861931422800527710 /* MasterViewController.m in Sources */,
+				D17692731932B1D50096A662 /* Constants.m in Sources */,
 				D13D217D1931422800527710 /* AppDelegate.m in Sources */,
 				D13D21831931422800527710 /* ProjectDico.xcdatamodeld in Sources */,
 				D171D39719317150007F525D /* UserDetailsViewController.m in Sources */,
 				D13D21791931422800527710 /* main.m in Sources */,
+				D176927E1932B82D0096A662 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

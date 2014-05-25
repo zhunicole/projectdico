@@ -8,15 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NSURLConnectionDataDelegate, UITabBarControllerDelegate, PFLogInViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-- (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
+//@property (nonatomic, strong) PAPTabBarController *tabBarController;
+@property (nonatomic, strong) UINavigationController *navController;
+
+@property (nonatomic, readonly) int networkStatus;
+
+- (BOOL)isParseReachable;
+
+- (void)presentLoginViewController;
+- (void)presentLoginViewControllerAnimated:(BOOL)animated;
+- (void)presentTabBarController;
+
+- (void)logOut;
+
+- (void)facebookRequestDidLoad:(id)result;
+- (void)facebookRequestDidFailWithError:(NSError *)error;
+
 
 @end
