@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 ProjectDico. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
 
 @interface MasterViewController ()
@@ -28,6 +28,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self.masterTable setDelegate:self];
+    //Parse tester
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
+    
 }
 
 - (void)didReceiveMemoryWarning

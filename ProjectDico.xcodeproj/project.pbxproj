@@ -35,6 +35,7 @@
 		D171D388193166EF007F525D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D171D387193166EF007F525D /* Security.framework */; };
 		D171D38A193166F7007F525D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D171D389193166F7007F525D /* StoreKit.framework */; };
 		D171D38C193166FF007F525D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D171D38B193166FE007F525D /* SystemConfiguration.framework */; };
+		D171D39019316B1E007F525D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D171D38F19316B1E007F525D /* FacebookSDK.framework */; };
 		D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6E919315B500035FCFF /* CategoryTVC.m */; };
 		D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		D171D387193166EF007F525D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D171D389193166F7007F525D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D171D38B193166FE007F525D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D171D38F19316B1E007F525D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		D1E7C6E819315B500035FCFF /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		D1E7C6E919315B500035FCFF /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoryTVC.h; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				D171D37E193166C2007F525D /* CFNetwork.framework in Frameworks */,
 				D171D37C193166BA007F525D /* AudioToolbox.framework in Frameworks */,
 				D13D21711931422800527710 /* CoreData.framework in Frameworks */,
+				D171D39019316B1E007F525D /* FacebookSDK.framework in Frameworks */,
 				D13D216F1931422800527710 /* UIKit.framework in Frameworks */,
 				D13D216B1931422800527710 /* Foundation.framework in Frameworks */,
 				D171D37A19316682007F525D /* Parse.framework in Frameworks */,
@@ -147,6 +150,7 @@
 		D13D21691931422700527710 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D171D38F19316B1E007F525D /* FacebookSDK.framework */,
 				D171D38B193166FE007F525D /* SystemConfiguration.framework */,
 				D171D389193166F7007F525D /* StoreKit.framework */,
 				D171D387193166EF007F525D /* Security.framework */,
@@ -212,12 +216,12 @@
 		D1E7C6EE19315B750035FCFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D13D21841931422800527710 /* MasterViewController.h */,
+				D13D21851931422800527710 /* MasterViewController.m */,
 				D1E7C6E819315B500035FCFF /* CategoryTVC.h */,
 				D1E7C6E919315B500035FCFF /* CategoryTVC.m */,
 				D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */,
 				D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */,
-				D13D21841931422800527710 /* MasterViewController.h */,
-				D13D21851931422800527710 /* MasterViewController.m */,
 				D13D21871931422800527710 /* DetailViewController.h */,
 				D13D21881931422800527710 /* DetailViewController.m */,
 			);
@@ -271,6 +275,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = ProjectDico;
 				TargetAttributes = {
+					D13D21661931422700527710 = {
+						DevelopmentTeam = FUTU96J3U9;
+					};
 					D13D218F1931422800527710 = {
 						TestTargetID = D13D21661931422700527710;
 					};
@@ -452,14 +459,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/nicolezhu/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectDico/ProjectDico-Prefix.pch";
 				INFOPLIST_FILE = "ProjectDico/ProjectDico-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -469,14 +480,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/nicolezhu/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectDico/ProjectDico-Prefix.pch";
 				INFOPLIST_FILE = "ProjectDico/ProjectDico-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
