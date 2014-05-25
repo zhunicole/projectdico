@@ -26,10 +26,12 @@
 
 - (IBAction)loginButtonTouchHandler:(id)sender {
     //TODO edit login permissions accordingly
+
     NSArray *permissionsArray = @[@"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
     
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^ (PFUser *user, NSError *error) {
-//        [_activityIndicator stopAnimating];
+        NSLog(@"hi");
+        //        [_activityIndicator stopAnimating];
         if (!user) {
             if (!error) {
                 NSLog(@"user canceled FB login");

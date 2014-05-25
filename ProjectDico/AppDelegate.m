@@ -9,7 +9,7 @@
 #import <Parse/Parse.h>
 #import "AppDelegate.h"
 #import "MasterViewController.h"
-
+#import "LoginViewController.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -20,13 +20,20 @@
 {
     [Parse setApplicationId:@"MCMwZBT970NiCf0DWZnY6vTSAie6yWzL0uX1LJqY"
                   clientKey:@"XMSccs2XzqjtOHbYvOsjZhPvzBhua9nDSZEZjRkr"];
-//    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions]; //ANALYTICS
-    // Override point for customization after application launch.
-//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    //    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions]; //ANALYTICS
+    //    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     //DEBUGGIN MODE
-    MasterViewController *controller = nil; //(MasterViewController *)navigationController.topViewController;
-    controller.managedObjectContext = nil; //self.managedObjectContext;
+//    MasterViewController *controller = nil; //(MasterViewController *)navigationController.topViewController;
+//    controller.managedObjectContext = nil; //self.managedObjectContext;
+
+    
+    [PFFacebookUtils initializeFacebook];
+
     return YES;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -52,11 +59,11 @@
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session]];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
-}
 
+//shouldn't need this it is deprecated
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+//    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session]];
+//}
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {

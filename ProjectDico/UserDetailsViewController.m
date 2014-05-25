@@ -25,8 +25,8 @@
     self.navigationItem.leftBarButtonItem = logoutButton;
     
     // Load table header view from nib
-    [[NSBundle mainBundle] loadNibNamed:@"TableHeaderView" owner:self options:nil];
-    self.tableView.tableHeaderView = self.headerView;
+//    [[NSBundle mainBundle] loadNibNamed:@"TableHeaderView" owner:self options:nil];
+//    self.tableView.tableHeaderView = self.headerView;
     
     // Create array for table row titles
     self.rowTitleArray = @[@"Location", @"Gender", @"Date of Birth", @"Relationship"];
