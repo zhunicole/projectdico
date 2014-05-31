@@ -8,6 +8,7 @@
         <scene sceneID="cUi-kZ-frf">
             <objects>
                 <navigationController id="rS3-R9-Ivy" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nND-zA-EuQ"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -39,7 +40,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonTouchHandler:" destination="E1N-D9-vLC" eventType="touchUpInside" id="Hj4-pK-iU7"/>
-                                    <segue destination="hr4-6s-Qsn" kind="push" id="Flj-JQ-ODc"/>
+                                    <segue destination="Xy3-wp-eax" kind="push" id="huN-Rh-L2h"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,7 +62,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="1Wb-DK-Vz9">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Wb-DK-Vz9" id="467-cV-2NR">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -322,6 +323,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="huN-Rh-L2h"/>
         <segue reference="NRa-dj-JkY"/>
     </inferredMetricsTieBreakers>
 </document>
