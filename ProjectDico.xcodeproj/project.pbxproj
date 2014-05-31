@@ -42,6 +42,8 @@
 		D17692781932B60F0096A662 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692771932B60F0096A662 /* Reachability.m */; };
 		D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927A1932B7AF0096A662 /* WelcomeViewController.m */; };
 		D176927E1932B82D0096A662 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927D1932B82D0096A662 /* Utility.m */; };
+		D17692811932C3010096A662 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692801932C3010096A662 /* TabBarController.m */; };
+		D1BB762A193A838D00679C7E /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7629193A838D00679C7E /* Cache.m */; };
 		D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6E919315B500035FCFF /* CategoryTVC.m */; };
 		D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,10 @@
 		D176927A1932B7AF0096A662 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		D176927C1932B82D0096A662 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		D176927D1932B82D0096A662 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		D176927F1932C3010096A662 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		D17692801932C3010096A662 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		D1BB7628193A838D00679C7E /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		D1BB7629193A838D00679C7E /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
 		D1E7C6E819315B500035FCFF /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		D1E7C6E919315B500035FCFF /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoryTVC.h; sourceTree = "<group>"; };
@@ -253,6 +259,8 @@
 				D176927D1932B82D0096A662 /* Utility.m */,
 				D17692711932B1D50096A662 /* Constants.h */,
 				D17692721932B1D50096A662 /* Constants.m */,
+				D1BB7628193A838D00679C7E /* Cache.h */,
+				D1BB7629193A838D00679C7E /* Cache.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -269,6 +277,8 @@
 		D1E7C6EE19315B750035FCFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D176927F1932C3010096A662 /* TabBarController.h */,
+				D17692801932C3010096A662 /* TabBarController.m */,
 				D171D39419316F12007F525D /* UserAccounts */,
 				D13D21841931422800527710 /* MasterViewController.h */,
 				D13D21851931422800527710 /* MasterViewController.m */,
@@ -389,10 +399,12 @@
 				D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */,
 				D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */,
 				D13D21861931422800527710 /* MasterViewController.m in Sources */,
+				D17692811932C3010096A662 /* TabBarController.m in Sources */,
 				D17692731932B1D50096A662 /* Constants.m in Sources */,
 				D13D217D1931422800527710 /* AppDelegate.m in Sources */,
 				D13D21831931422800527710 /* ProjectDico.xcdatamodeld in Sources */,
 				D171D39719317150007F525D /* UserDetailsViewController.m in Sources */,
+				D1BB762A193A838D00679C7E /* Cache.m in Sources */,
 				D13D21791931422800527710 /* main.m in Sources */,
 				D176927E1932B82D0096A662 /* Utility.m in Sources */,
 			);

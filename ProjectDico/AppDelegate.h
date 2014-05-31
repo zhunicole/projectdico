@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, NSURLConnectionDataDelegate, UITabBarControllerDelegate, PFLogInViewControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NSURLConnectionDataDelegate, UITabBarControllerDelegate>
+
+//TODO missing , PFLogInViewControllerDelegate
 
 @property (strong, nonatomic) UIWindow *window;
 
 
-//@property (nonatomic, strong) PAPTabBarController *tabBarController;
+//@property (nonatomic, strong) TabBarController *tabBarController;
 @property (nonatomic, strong) UINavigationController *navController;
 
 @property (nonatomic, readonly) int networkStatus;
@@ -22,7 +24,6 @@
 
 - (void)presentLoginViewController;
 - (void)presentLoginViewControllerAnimated:(BOOL)animated;
-- (void)presentTabBarController;
 
 - (void)logOut;
 
