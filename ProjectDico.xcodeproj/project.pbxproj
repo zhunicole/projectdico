@@ -44,6 +44,8 @@
 		D176927E1932B82D0096A662 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927D1932B82D0096A662 /* Utility.m */; };
 		D17692811932C3010096A662 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692801932C3010096A662 /* TabBarController.m */; };
 		D1BB762A193A838D00679C7E /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7629193A838D00679C7E /* Cache.m */; };
+		D1BB762D193A979300679C7E /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB762C193A979300679C7E /* Helper.m */; };
+		D1BB7637193A996600679C7E /* TaskCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7636193A996600679C7E /* TaskCategory.m */; };
 		D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6E919315B500035FCFF /* CategoryTVC.m */; };
 		D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */; };
 /* End PBXBuildFile section */
@@ -109,6 +111,10 @@
 		D17692801932C3010096A662 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		D1BB7628193A838D00679C7E /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
 		D1BB7629193A838D00679C7E /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
+		D1BB762B193A979300679C7E /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		D1BB762C193A979300679C7E /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		D1BB7635193A996600679C7E /* TaskCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCategory.h; sourceTree = "<group>"; };
+		D1BB7636193A996600679C7E /* TaskCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCategory.m; sourceTree = "<group>"; };
 		D1E7C6E819315B500035FCFF /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		D1E7C6E919315B500035FCFF /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoryTVC.h; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 		D13D21721931422800527710 /* ProjectDico */ = {
 			isa = PBXGroup;
 			children = (
+				D1BB7631193A984400679C7E /* Models */,
 				D17692741932B1E20096A662 /* Helper */,
 				D13D217B1931422800527710 /* AppDelegate.h */,
 				D13D217C1931422800527710 /* AppDelegate.m */,
@@ -255,6 +262,8 @@
 		D17692741932B1E20096A662 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				D1BB762B193A979300679C7E /* Helper.h */,
+				D1BB762C193A979300679C7E /* Helper.m */,
 				D176927C1932B82D0096A662 /* Utility.h */,
 				D176927D1932B82D0096A662 /* Utility.m */,
 				D17692711932B1D50096A662 /* Constants.h */,
@@ -272,6 +281,15 @@
 				D17692771932B60F0096A662 /* Reachability.m */,
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		D1BB7631193A984400679C7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1BB7635193A996600679C7E /* TaskCategory.h */,
+				D1BB7636193A996600679C7E /* TaskCategory.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		D1E7C6EE19315B750035FCFF /* Controllers */ = {
@@ -395,9 +413,11 @@
 				D171D39319316F08007F525D /* LoginViewController.m in Sources */,
 				D13D21891931422800527710 /* DetailViewController.m in Sources */,
 				D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */,
+				D1BB762D193A979300679C7E /* Helper.m in Sources */,
 				D17692781932B60F0096A662 /* Reachability.m in Sources */,
 				D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */,
 				D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */,
+				D1BB7637193A996600679C7E /* TaskCategory.m in Sources */,
 				D13D21861931422800527710 /* MasterViewController.m in Sources */,
 				D17692811932C3010096A662 /* TabBarController.m in Sources */,
 				D17692731932B1D50096A662 /* Constants.m in Sources */,

@@ -43,6 +43,7 @@
 //    [self monitorReachability];
     
     [PFFacebookUtils initializeFacebook];
+    
 
     NSLog(@"end of this fn");
     return YES;

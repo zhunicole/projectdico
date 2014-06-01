@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "TaskCategory.h"
 
 @interface MasterViewController ()
 
@@ -29,9 +30,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [self.masterTable setDelegate:self];
     //Parse tester
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    
+    //load categories
+    [TaskCategory loadCategories];
     
 }
 
