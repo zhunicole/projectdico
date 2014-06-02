@@ -8,7 +8,25 @@
 
 #import "TaskCategory.h"
 
+@interface TaskCategory()
+
+@property (strong, nonatomic) NSArray *categoriesArray;
+
+@end
+
+
 @implementation TaskCategory
+
+@synthesize categoriesArray;
+
+//
+//- (NSArray *) categoriesArray {
+//    if (!_categoriesArray){
+//        _categoriesArray = @[@"Home Maintenance", @"Cleaning", @"Yard Work", @"Groceries", @"Pick-up And Delivery", @"Scheduling", @"Other"];
+//    }
+//    return _categoriesArray;
+//    
+//}
 
 + (void) loadCategories {
     
@@ -17,11 +35,11 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count]>0) {
             // The find succeeded.
-            NSLog(@"Successfully retrieved %d objs.", objects.count);
+//            NSLog(@"Successfully retrieved %d objs.", objects.count);
             // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-            }
+//            for (PFObject *object in objects) {
+//                NSLog(@"%@", object.objectId);
+//            }
         } else {
             // Log details of the failure
             NSLog(@"Adding categories");
@@ -37,6 +55,10 @@
     }];
 }
 
+static const int kTotalCategories = 7;
++ (NSInteger) totalNumCategories {
+    return kTotalCategories;
+}
 /* Blocking call to retrieve categories of taks*/
 //+ (void) getCategories {
 ////    PFQuery *query = [PFQuery queryWithClassName:@"task_categories"];

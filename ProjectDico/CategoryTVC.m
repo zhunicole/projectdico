@@ -7,6 +7,8 @@
 //
 
 #import "CategoryTVC.h"
+#import "Constants.h"
+#import "SubCategoryTVC.h"
 #import <Parse/Parse.h>
 
 @interface CategoryTVC ()
@@ -26,17 +28,18 @@
 
 
 #pragma mark - Table View
+static const int kNumCategories = 7;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
 //    return [sectionInfo numberOfObjects];
-    return 7;
+    return kNumCategories;
+
 }
 
 - (void) setCategoryArray {
-//    if (!_categoryArray) {
-        NSLog(@"ehre");
+    if (!_categoryArray) {
         PFQuery *query = [PFQuery queryWithClassName:@"task_categories"];
         
         // Follow relationship
@@ -46,25 +49,65 @@
             if (!error) {
                 PFObject *entry = [objects objectAtIndex:([objects count]-1)];
                 self.categoryArray = entry[@"list"];           // Store results
-                NSLog(@"task cat: %@", [self.categoryArray objectAtIndex:0]);
                 [self.tableView reloadData];   // Reload table
             }
         }];
-
-//    }
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCell" forIndexPath:indexPath];
-
-//    PFObject *category = [self.categoryArray objectAtIndex:indexPath.row];
     [cell.textLabel setText:[self.categoryArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
+
+#pragma mark - UITableViewDelegate
+
+/* TODO For ipad*/
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    id detailVC = [self.splitViewController.viewControllers lastObject];
+//    if ([detailVC isKindOfClass:[UINavigationController class]]) {
+//        detailVC = [((UINavigationController *)detailVC).viewControllers firstObject];
+//    }
+//    if ([detailVC isKindOfClass:[PhotoViewController class]]) {
+//        Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//        [self prepareVC:detailVC toDisplayPhoto:photo];
+//    }
+//}
+
+
+#pragma mark - Navigation
+
+- (void)prepareVC:(SubcategoryTVC *)ivc
+      forCategory:(NSInteger)catID
+{
+    ivc.categoryID = catID;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        if (indexPath) {
+            if ([segue.identifier isEqualToString:@"pickSubcategory"]) {
+                if ([segue.destinationViewController isKindOfClass:[SubcategoryTVC class]]) {
+                    NSInteger categoryID = 0;//TODO [self.fetchedResultsController objectAtIndexPath:indexPath];
+                    [self prepareVC:segue.destinationViewController forCategory:categoryID];
+                }
+            }
+        }
+    }
+}
+
+
+
 - (IBAction)goToCategoryTVC :(UIStoryboardSegue*)segue {
     
 }
+
 
 @end

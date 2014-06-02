@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SubcategoryTVC : UITableViewController
+@property (nonatomic, assign) NSInteger categoryID;
 
 @end

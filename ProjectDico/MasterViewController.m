@@ -10,6 +10,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "TaskCategory.h"
+#import "SubCategory.h"
 
 @interface MasterViewController ()
 
@@ -33,6 +34,7 @@
     
     //load categories
     [TaskCategory loadCategories];
+    [SubCategory loadSubCategories];
     
 }
 

@@ -43,6 +43,7 @@
 		D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927A1932B7AF0096A662 /* WelcomeViewController.m */; };
 		D176927E1932B82D0096A662 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927D1932B82D0096A662 /* Utility.m */; };
 		D17692811932C3010096A662 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692801932C3010096A662 /* TabBarController.m */; };
+		D1A9B648193C11880008AE3D /* SubCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A9B647193C11880008AE3D /* SubCategory.m */; };
 		D1BB762A193A838D00679C7E /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7629193A838D00679C7E /* Cache.m */; };
 		D1BB762D193A979300679C7E /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB762C193A979300679C7E /* Helper.m */; };
 		D1BB7637193A996600679C7E /* TaskCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7636193A996600679C7E /* TaskCategory.m */; };
@@ -109,6 +110,8 @@
 		D176927D1932B82D0096A662 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		D176927F1932C3010096A662 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		D17692801932C3010096A662 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		D1A9B646193C11880008AE3D /* SubCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategory.h; sourceTree = "<group>"; };
+		D1A9B647193C11880008AE3D /* SubCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategory.m; sourceTree = "<group>"; };
 		D1BB7628193A838D00679C7E /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
 		D1BB7629193A838D00679C7E /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
 		D1BB762B193A979300679C7E /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 			children = (
 				D1BB7635193A996600679C7E /* TaskCategory.h */,
 				D1BB7636193A996600679C7E /* TaskCategory.m */,
+				D1A9B646193C11880008AE3D /* SubCategory.h */,
+				D1A9B647193C11880008AE3D /* SubCategory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				D171D39719317150007F525D /* UserDetailsViewController.m in Sources */,
 				D1BB762A193A838D00679C7E /* Cache.m in Sources */,
 				D13D21791931422800527710 /* main.m in Sources */,
+				D1A9B648193C11880008AE3D /* SubCategory.m in Sources */,
 				D176927E1932B82D0096A662 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
