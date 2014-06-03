@@ -129,9 +129,7 @@ static NSArray *other;
     NSLog(@"loading subcategories");
     
     PFQuery *query = [PFQuery queryWithClassName:@"task_subcategories"];
-//    int categoryID = 0;
-//    [query whereKey:@"taskCategory" equalTo:[NSNumber numberWithInteger:categoryID]];
-    
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] > 6) { //has a complete list
             NSLog(@"Successfully retrieved %d objs.", objects.count);
@@ -150,28 +148,5 @@ static NSArray *other;
     }];
 }
 
-//- (void) loadSubCategoriesFor: (NSInteger)category {
-//    
-//    PFQuery *query = [PFQuery queryWithClassName:@"task_subcategories"];
-//    [query whereKey:@"taskCategory" equalTo:[NSNumber numberWithInteger:category]];
-//     
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) { //has a list for that specific
-//            NSLog(@"Successfully retrieved %d objs.", objects.count);
-//            // Do something with the found objects
-//            for (PFObject *object in objects) {
-//                NSLog(@"%@", object.objectId);
-//            }
-//        } else {
-//            // Log details of the failure
-//            NSLog(@"Adding sub categories");
-//            PFObject *subcategories = [PFObject objectWithClassName:@"task_subcategories"];
-//            subcategories[@"taskCategory"] = [NSNumber numberWithInteger:category];
-//            subcategories[@"list"] = [self getSubcategoriesFor:category];
-//            [subcategories saveInBackground];
-//            
-//        }
-//    }];
-//}
 
 @end
