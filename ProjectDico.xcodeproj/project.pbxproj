@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D128578F193E7C7100C84A9C /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D128578E193E7C7100C84A9C /* CalendarController.m */; };
+		D1285793193E7DE000C84A9C /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1285792193E7DE000C84A9C /* CameraController.m */; };
 		D13D216B1931422800527710 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D216A1931422700527710 /* Foundation.framework */; };
 		D13D216D1931422800527710 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D216C1931422800527710 /* CoreGraphics.framework */; };
 		D13D216F1931422800527710 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D216E1931422800527710 /* UIKit.framework */; };
@@ -62,6 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D128578D193E7C7100C84A9C /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
+		D128578E193E7C7100C84A9C /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarController.m; sourceTree = "<group>"; };
+		D1285791193E7DE000C84A9C /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
+		D1285792193E7DE000C84A9C /* CameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
 		D13D21671931422700527710 /* ProjectDico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDico.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13D216A1931422700527710 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D13D216C1931422800527710 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +167,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1285790193E7C7D00C84A9C /* TaskDetailControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D13D21871931422800527710 /* DetailViewController.h */,
+				D13D21881931422800527710 /* DetailViewController.m */,
+				D128578D193E7C7100C84A9C /* CalendarController.h */,
+				D128578E193E7C7100C84A9C /* CalendarController.m */,
+				D1285791193E7DE000C84A9C /* CameraController.h */,
+				D1285792193E7DE000C84A9C /* CameraController.m */,
+			);
+			name = TaskDetailControllers;
+			sourceTree = "<group>";
+		};
 		D13D215E1931422700527710 = {
 			isa = PBXGroup;
 			children = (
@@ -309,8 +328,7 @@
 				D1E7C6E919315B500035FCFF /* CategoryTVC.m */,
 				D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */,
 				D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */,
-				D13D21871931422800527710 /* DetailViewController.h */,
-				D13D21881931422800527710 /* DetailViewController.m */,
+				D1285790193E7C7D00C84A9C /* TaskDetailControllers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -425,12 +443,14 @@
 				D1BB7637193A996600679C7E /* TaskCategory.m in Sources */,
 				D13D21861931422800527710 /* MasterViewController.m in Sources */,
 				D17692811932C3010096A662 /* TabBarController.m in Sources */,
+				D1285793193E7DE000C84A9C /* CameraController.m in Sources */,
 				D17692731932B1D50096A662 /* Constants.m in Sources */,
 				D13D217D1931422800527710 /* AppDelegate.m in Sources */,
 				D13D21831931422800527710 /* ProjectDico.xcdatamodeld in Sources */,
 				D171D39719317150007F525D /* UserDetailsViewController.m in Sources */,
 				D1BB762A193A838D00679C7E /* Cache.m in Sources */,
 				D13D21791931422800527710 /* main.m in Sources */,
+				D128578F193E7C7100C84A9C /* CalendarController.m in Sources */,
 				D1A9B648193C11880008AE3D /* SubCategory.m in Sources */,
 				D176927E1932B82D0096A662 /* Utility.m in Sources */,
 			);
