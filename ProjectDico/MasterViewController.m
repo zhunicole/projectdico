@@ -33,8 +33,8 @@
     //Parse tester
     
     //load categories
-    [TaskCategory loadCategories];
-    [SubCategory loadSubCategories];
+    [TaskCategory uploadCategories];
+    [SubCategory uploadSubCategories];
     
 }
 

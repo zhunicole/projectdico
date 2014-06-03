@@ -125,26 +125,26 @@ static NSArray *other;
     
 }
 
-+ (void) loadSubCategories {
++ (void) uploadSubCategories {
     NSLog(@"loading subcategories");
     
     PFQuery *query = [PFQuery queryWithClassName:@"task_subcategories"];
-    [query whereKey:@"taskCategory" equalTo:[NSNumber numberWithInteger:0]];
+//    int categoryID = 0;
+//    [query whereKey:@"taskCategory" equalTo:[NSNumber numberWithInteger:categoryID]];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if ([objects count]>0) { //has a list for that specific
+        if ([objects count] > 6) { //has a complete list
             NSLog(@"Successfully retrieved %d objs.", objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-            }
         } else {
-            // Log details of the failure
-            NSLog(@"Adding homemaintenace subcategory");
-            PFObject *subcategories = [PFObject objectWithClassName:@"task_subcategories"];
-            subcategories[@"taskCategory"] = [NSNumber numberWithInteger:0];
-            subcategories[@"list"] = [self getSubcategoriesFor:0];
-            [subcategories saveInBackground];
+            // TODO fix this
+            for (int i =0; i < 6; i++) {
+                NSLog(@"Adding homemaintenace subcategory");
+                PFObject *subcategories = [PFObject objectWithClassName:@"task_subcategories"];
+                subcategories[@"taskCategory"] = [NSNumber numberWithInteger:i];
+                subcategories[@"list"] = [self getSubcategoriesFor:i];
+                [subcategories saveInBackground];
+            }
+            
             
         }
     }];

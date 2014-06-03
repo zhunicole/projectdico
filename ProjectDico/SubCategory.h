@@ -13,5 +13,5 @@
 
 
 + (NSArray*) getSubcategoriesFor: (NSInteger )category;
-+ (void) loadSubCategories;
++ (void) uploadSubCategories;
 @end

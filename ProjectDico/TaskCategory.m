@@ -28,7 +28,7 @@
 //    
 //}
 
-+ (void) loadCategories {
++ (void) uploadCategories {
     
     PFQuery *query = [PFQuery queryWithClassName:@"task_categories"];
     

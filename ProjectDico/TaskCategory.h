@@ -20,7 +20,7 @@ static const NSInteger kOther = 6;
 
 @interface TaskCategory : NSObject
 
-+ (void) loadCategories;
++ (void) uploadCategories;
 + (NSInteger) totalNumCategories;
 
 

@@ -27,20 +27,17 @@
 
 
 #pragma mark - Table View
-static const int kNumCategories = 2;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    //    return [sectionInfo numberOfObjects];
-    return kNumCategories;
+
+    return self.SubCategoryArray.count;
     
 }
 
 - (void) setSubCategoryArray {
     if (!_SubCategoryArray) {
         PFQuery *query = [PFQuery queryWithClassName:@"task_subcategories"];
-        
         [query whereKey:@"taskCategory" equalTo:[NSNumber numberWithInteger:self.categoryID]];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -55,6 +52,7 @@ static const int kNumCategories = 2;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"subcategory" forIndexPath:indexPath];
     [cell.textLabel setText:[self.SubCategoryArray objectAtIndex:indexPath.row]];
     return cell;
