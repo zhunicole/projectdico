@@ -22,53 +22,56 @@ static NSArray *other;
 
 + (void)initialize {
     homeMaintenance = @[
-                  @"Furniture",
+                  @"Furniture Assembly",
                   @"Painting",
-                  @"Won Games",
-                  @"Lost Games",
-                  @"Options"
+                  @"Moving Help",
+                  @"Window Treatments",
+                  @"Knobs and Locks",
+                  @"Air Conditioner",
+                  @"Electrical",
+                  @"Plumbing",
+                  @"Other"
                   ];
     cleaning = @[
-                        @"Your Move",
-                        @"Their Move",
-                        @"Won Games",
-                        @"Lost Games",
-                        @"Options"
+                        @"Indoor",
+                        @"Outdoor",
+                        @"Commercial",
+                        @"Industrial",
+                        @"Other"
                         ];
     yardWork = @[
-                        @"Your Move",
-                        @"Their Move",
-                        @"Won Games",
-                        @"Lost Games",
-                        @"Options"
+                        @"Gardening",
+                        @"Lawn Mowing",
+                        @"Watering",
+                        @"Hedge Trim",
+                        @"Other"
                         ];
     groceries = @[
-                        @"Your Move",
-                        @"Their Move",
-                        @"Won Games",
-                        @"Lost Games",
-                        @"Options"
+                        @"Safeway",
+                        @"Whole Foods",
+                        @"Trader Joes",
+                        @"Mollie Stone's",
+                        @"Other"
                         ];
     pickUpDelivery = @[
-                        @"Your Move",
-                        @"Their Move",
-                        @"Won Games",
-                        @"Lost Games",
-                        @"Options"
+                        @"Food",
+                        @"Packages",
+                        @"Dry Cleaning",
+                        @"Convenience Items",
+                        @"Other"
                         ];
     scheduling = @[
-                        @"Your Move",
-                        @"Their Move",
-                        @"Won Games",
-                        @"Lost Games",
-                        @"Options"
+                        @"Appointment",
+                        @"Transportation",
+                        @"Hotels/Lodging",
+                        @"Reminder",
+                        @"Other"
                         ];
     other = @[
-                   @"Your Move",
-                   @"Their Move",
-                   @"Won Games",
-                   @"Lost Games",
-                   @"Options"
+                   @"Special Request",
+                   @"Issues with Dico",
+                   @"Suggestions for Dico",
+                   @"Other"
                    ];
     
     
