@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MNCalendarHeaderView.h"
+#import "MNCalendarView.h"
+
 
 @interface CalendarController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *calendarView;
 
 @end

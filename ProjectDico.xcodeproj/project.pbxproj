@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		D128578F193E7C7100C84A9C /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D128578E193E7C7100C84A9C /* CalendarController.m */; };
 		D1285793193E7DE000C84A9C /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1285792193E7DE000C84A9C /* CameraController.m */; };
+		D1285799193E835500C84A9C /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1285795193E835500C84A9C /* AcousticModelEnglish.bundle */; };
+		D128579A193E835500C84A9C /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1285796193E835500C84A9C /* AcousticModelSpanish.bundle */; };
+		D128579B193E835500C84A9C /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1285797193E835500C84A9C /* OpenEars.framework */; };
+		D128579C193E835500C84A9C /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1285798193E835500C84A9C /* Slt.framework */; };
+		D128579E193E836900C84A9C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D128579D193E836900C84A9C /* AVFoundation.framework */; };
+		D12857A4193E83A700C84A9C /* RecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857A3193E83A700C84A9C /* RecordController.m */; };
+		D12857B5193EBEED00C84A9C /* MNCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857A6193EBEED00C84A9C /* MNCalendarHeaderView.m */; };
+		D12857B6193EBEED00C84A9C /* MNCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857A8193EBEED00C84A9C /* MNCalendarView.m */; };
+		D12857B7193EBEED00C84A9C /* MNCalendarViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857AA193EBEED00C84A9C /* MNCalendarViewCell.m */; };
+		D12857B8193EBEED00C84A9C /* MNCalendarViewDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857AC193EBEED00C84A9C /* MNCalendarViewDayCell.m */; };
+		D12857B9193EBEED00C84A9C /* MNCalendarViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857AE193EBEED00C84A9C /* MNCalendarViewLayout.m */; };
+		D12857BA193EBEED00C84A9C /* MNCalendarViewWeekdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857B0193EBEED00C84A9C /* MNCalendarViewWeekdayCell.m */; };
+		D12857BB193EBEED00C84A9C /* MNFastDateEnumeration.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857B2193EBEED00C84A9C /* MNFastDateEnumeration.m */; };
+		D12857BC193EBEED00C84A9C /* NSDate+MNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857B4193EBEED00C84A9C /* NSDate+MNAdditions.m */; };
 		D13D216B1931422800527710 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D216A1931422700527710 /* Foundation.framework */; };
 		D13D216D1931422800527710 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D216C1931422800527710 /* CoreGraphics.framework */; };
 		D13D216F1931422800527710 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D216E1931422800527710 /* UIKit.framework */; };
@@ -68,6 +82,29 @@
 		D128578E193E7C7100C84A9C /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarController.m; sourceTree = "<group>"; };
 		D1285791193E7DE000C84A9C /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
 		D1285792193E7DE000C84A9C /* CameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
+		D1285795193E835500C84A9C /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		D1285796193E835500C84A9C /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		D1285797193E835500C84A9C /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		D1285798193E835500C84A9C /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		D128579D193E836900C84A9C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D12857A2193E83A700C84A9C /* RecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordController.h; sourceTree = "<group>"; };
+		D12857A3193E83A700C84A9C /* RecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordController.m; sourceTree = "<group>"; };
+		D12857A5193EBEED00C84A9C /* MNCalendarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarHeaderView.h; sourceTree = "<group>"; };
+		D12857A6193EBEED00C84A9C /* MNCalendarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarHeaderView.m; sourceTree = "<group>"; };
+		D12857A7193EBEED00C84A9C /* MNCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarView.h; sourceTree = "<group>"; };
+		D12857A8193EBEED00C84A9C /* MNCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarView.m; sourceTree = "<group>"; };
+		D12857A9193EBEED00C84A9C /* MNCalendarViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarViewCell.h; sourceTree = "<group>"; };
+		D12857AA193EBEED00C84A9C /* MNCalendarViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarViewCell.m; sourceTree = "<group>"; };
+		D12857AB193EBEED00C84A9C /* MNCalendarViewDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarViewDayCell.h; sourceTree = "<group>"; };
+		D12857AC193EBEED00C84A9C /* MNCalendarViewDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarViewDayCell.m; sourceTree = "<group>"; };
+		D12857AD193EBEED00C84A9C /* MNCalendarViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarViewLayout.h; sourceTree = "<group>"; };
+		D12857AE193EBEED00C84A9C /* MNCalendarViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarViewLayout.m; sourceTree = "<group>"; };
+		D12857AF193EBEED00C84A9C /* MNCalendarViewWeekdayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarViewWeekdayCell.h; sourceTree = "<group>"; };
+		D12857B0193EBEED00C84A9C /* MNCalendarViewWeekdayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarViewWeekdayCell.m; sourceTree = "<group>"; };
+		D12857B1193EBEED00C84A9C /* MNFastDateEnumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNFastDateEnumeration.h; sourceTree = "<group>"; };
+		D12857B2193EBEED00C84A9C /* MNFastDateEnumeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNFastDateEnumeration.m; sourceTree = "<group>"; };
+		D12857B3193EBEED00C84A9C /* NSDate+MNAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MNAdditions.h"; sourceTree = "<group>"; };
+		D12857B4193EBEED00C84A9C /* NSDate+MNAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MNAdditions.m"; sourceTree = "<group>"; };
 		D13D21671931422700527710 /* ProjectDico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDico.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13D216A1931422700527710 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D13D216C1931422800527710 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,17 +172,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D128579E193E836900C84A9C /* AVFoundation.framework in Frameworks */,
 				D171D38C193166FF007F525D /* SystemConfiguration.framework in Frameworks */,
 				D171D38A193166F7007F525D /* StoreKit.framework in Frameworks */,
 				D171D388193166EF007F525D /* Security.framework in Frameworks */,
 				D171D386193166E8007F525D /* QuartzCore.framework in Frameworks */,
 				D171D384193166E2007F525D /* MobileCoreServices.framework in Frameworks */,
 				D171D382193166D7007F525D /* libz.dylib in Frameworks */,
+				D128579C193E835500C84A9C /* Slt.framework in Frameworks */,
 				D171D380193166D0007F525D /* CoreLocation.framework in Frameworks */,
 				D13D216D1931422800527710 /* CoreGraphics.framework in Frameworks */,
 				D171D37E193166C2007F525D /* CFNetwork.framework in Frameworks */,
 				D171D37C193166BA007F525D /* AudioToolbox.framework in Frameworks */,
 				D13D21711931422800527710 /* CoreData.framework in Frameworks */,
+				D128579B193E835500C84A9C /* OpenEars.framework in Frameworks */,
 				D171D39019316B1E007F525D /* FacebookSDK.framework in Frameworks */,
 				D13D216F1931422800527710 /* UIKit.framework in Frameworks */,
 				D13D216B1931422800527710 /* Foundation.framework in Frameworks */,
@@ -172,12 +212,48 @@
 			children = (
 				D13D21871931422800527710 /* DetailViewController.h */,
 				D13D21881931422800527710 /* DetailViewController.m */,
+				D12857A2193E83A700C84A9C /* RecordController.h */,
+				D12857A3193E83A700C84A9C /* RecordController.m */,
 				D128578D193E7C7100C84A9C /* CalendarController.h */,
 				D128578E193E7C7100C84A9C /* CalendarController.m */,
 				D1285791193E7DE000C84A9C /* CameraController.h */,
 				D1285792193E7DE000C84A9C /* CameraController.m */,
 			);
 			name = TaskDetailControllers;
+			sourceTree = "<group>";
+		};
+		D1285794193E835500C84A9C /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				D1285795193E835500C84A9C /* AcousticModelEnglish.bundle */,
+				D1285796193E835500C84A9C /* AcousticModelSpanish.bundle */,
+				D1285797193E835500C84A9C /* OpenEars.framework */,
+				D1285798193E835500C84A9C /* Slt.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		D12857BD193EBF1700C84A9C /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				D12857A5193EBEED00C84A9C /* MNCalendarHeaderView.h */,
+				D12857A6193EBEED00C84A9C /* MNCalendarHeaderView.m */,
+				D12857A7193EBEED00C84A9C /* MNCalendarView.h */,
+				D12857A8193EBEED00C84A9C /* MNCalendarView.m */,
+				D12857A9193EBEED00C84A9C /* MNCalendarViewCell.h */,
+				D12857AA193EBEED00C84A9C /* MNCalendarViewCell.m */,
+				D12857AB193EBEED00C84A9C /* MNCalendarViewDayCell.h */,
+				D12857AC193EBEED00C84A9C /* MNCalendarViewDayCell.m */,
+				D12857AD193EBEED00C84A9C /* MNCalendarViewLayout.h */,
+				D12857AE193EBEED00C84A9C /* MNCalendarViewLayout.m */,
+				D12857AF193EBEED00C84A9C /* MNCalendarViewWeekdayCell.h */,
+				D12857B0193EBEED00C84A9C /* MNCalendarViewWeekdayCell.m */,
+				D12857B1193EBEED00C84A9C /* MNFastDateEnumeration.h */,
+				D12857B2193EBEED00C84A9C /* MNFastDateEnumeration.m */,
+				D12857B3193EBEED00C84A9C /* NSDate+MNAdditions.h */,
+				D12857B4193EBEED00C84A9C /* NSDate+MNAdditions.m */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 		D13D215E1931422700527710 = {
@@ -203,6 +279,8 @@
 		D13D21691931422700527710 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D128579D193E836900C84A9C /* AVFoundation.framework */,
+				D1285794193E835500C84A9C /* Framework */,
 				D171D38F19316B1E007F525D /* FacebookSDK.framework */,
 				D171D38B193166FE007F525D /* SystemConfiguration.framework */,
 				D171D389193166F7007F525D /* StoreKit.framework */,
@@ -226,6 +304,7 @@
 		D13D21721931422800527710 /* ProjectDico */ = {
 			isa = PBXGroup;
 			children = (
+				D12857BD193EBF1700C84A9C /* Calendar */,
 				D1BB7631193A984400679C7E /* Models */,
 				D17692741932B1E20096A662 /* Helper */,
 				D13D217B1931422800527710 /* AppDelegate.h */,
@@ -413,6 +492,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D13D218B1931422800527710 /* Images.xcassets in Resources */,
+				D128579A193E835500C84A9C /* AcousticModelSpanish.bundle in Resources */,
+				D1285799193E835500C84A9C /* AcousticModelEnglish.bundle in Resources */,
 				D13D21771931422800527710 /* InfoPlist.strings in Resources */,
 				D13D21801931422800527710 /* Main.storyboard in Resources */,
 			);
@@ -433,12 +514,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D12857BC193EBEED00C84A9C /* NSDate+MNAdditions.m in Sources */,
+				D12857B6193EBEED00C84A9C /* MNCalendarView.m in Sources */,
 				D171D39319316F08007F525D /* LoginViewController.m in Sources */,
 				D13D21891931422800527710 /* DetailViewController.m in Sources */,
 				D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */,
 				D1BB762D193A979300679C7E /* Helper.m in Sources */,
 				D17692781932B60F0096A662 /* Reachability.m in Sources */,
+				D12857B8193EBEED00C84A9C /* MNCalendarViewDayCell.m in Sources */,
 				D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */,
+				D12857B7193EBEED00C84A9C /* MNCalendarViewCell.m in Sources */,
+				D12857A4193E83A700C84A9C /* RecordController.m in Sources */,
 				D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */,
 				D1BB7637193A996600679C7E /* TaskCategory.m in Sources */,
 				D13D21861931422800527710 /* MasterViewController.m in Sources */,
@@ -446,13 +532,17 @@
 				D1285793193E7DE000C84A9C /* CameraController.m in Sources */,
 				D17692731932B1D50096A662 /* Constants.m in Sources */,
 				D13D217D1931422800527710 /* AppDelegate.m in Sources */,
+				D12857B5193EBEED00C84A9C /* MNCalendarHeaderView.m in Sources */,
 				D13D21831931422800527710 /* ProjectDico.xcdatamodeld in Sources */,
 				D171D39719317150007F525D /* UserDetailsViewController.m in Sources */,
+				D12857BB193EBEED00C84A9C /* MNFastDateEnumeration.m in Sources */,
 				D1BB762A193A838D00679C7E /* Cache.m in Sources */,
 				D13D21791931422800527710 /* main.m in Sources */,
 				D128578F193E7C7100C84A9C /* CalendarController.m in Sources */,
 				D1A9B648193C11880008AE3D /* SubCategory.m in Sources */,
+				D12857BA193EBEED00C84A9C /* MNCalendarViewWeekdayCell.m in Sources */,
 				D176927E1932B82D0096A662 /* Utility.m in Sources */,
+				D12857B9193EBEED00C84A9C /* MNCalendarViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +673,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/nicolezhu/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/Framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectDico/ProjectDico-Prefix.pch";
@@ -604,6 +695,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/nicolezhu/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/Framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectDico/ProjectDico-Prefix.pch";

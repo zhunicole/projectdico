@@ -8,6 +8,15 @@
 
 #import "CalendarController.h"
 
+
 @implementation CalendarController
+
+- (void) viewDidAppear:(BOOL)animated {
+    NSLog(@"here");
+    MNCalendarView *calendarView = [[MNCalendarView alloc] initWithFrame:self.view.bounds];
+    calendarView.selectedDate = [NSDate date];
+    calendarView.delegate = self;
+}
+
 
 @end
