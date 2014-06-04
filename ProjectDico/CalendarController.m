@@ -12,10 +12,14 @@
 @implementation CalendarController
 
 - (void) viewDidAppear:(BOOL)animated {
-    NSLog(@"here");
     MNCalendarView *calendarView = [[MNCalendarView alloc] initWithFrame:self.view.bounds];
     calendarView.selectedDate = [NSDate date];
-    calendarView.delegate = self;
+    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow: -(60.0f*60.0f*24.0f)];
+    calendarView.selectedDate = yesterday;
+
+//    calendarView.delegate = self; not sure what this does
+    
+    NSLog(@"selected date: %@",calendarView.selectedDate);
 }
 
 

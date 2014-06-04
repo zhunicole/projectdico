@@ -46,11 +46,10 @@ NSString *const MNCalendarViewDayCellIdentifier = @"MNCalendarViewDayCellIdentif
 - (void)setEnabled:(BOOL)enabled {
   [super setEnabled:enabled];
   
-  self.titleLabel.textColor =
-  self.enabled ? UIColor.darkTextColor : UIColor.lightGrayColor;
+    self.titleLabel.textColor = self.enabled ? [UIColor whiteColor] : UIColor.lightGrayColor;
   
   self.backgroundColor =
-  self.enabled ? UIColor.whiteColor : [UIColor colorWithRed:.96f green:.96f blue:.96f alpha:1.f];
+  self.enabled ? [UIColor grayColor] : [UIColor colorWithRed:.96f green:.96f blue:.96f alpha:1.f];
 }
 
 - (void)drawRect:(CGRect)rect {
