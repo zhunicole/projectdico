@@ -347,7 +347,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    //TODO update view with staring with this method
+
 
     MNCalendarViewCell *cell = (MNCalendarViewCell *)[self collectionView:collectionView cellForItemAtIndexPath:indexPath];
 
@@ -355,7 +355,8 @@
     MNCalendarViewDayCell *dayCell = (MNCalendarViewDayCell *)cell;
     
     self.selectedDate = dayCell.date;
-    
+    NSLog(@"selected date: %@", self.selectedDate);
+      
     if (self.delegate && [self.delegate respondsToSelector:@selector(calendarView:didSelectDate:)]) {
       [self.delegate calendarView:self didSelectDate:dayCell.date];
     }

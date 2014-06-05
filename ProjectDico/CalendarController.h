@@ -11,7 +11,17 @@
 #import "MNCalendarView.h"
 
 
-@interface CalendarController : UIViewController
+@interface CalendarController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>{
+    
+    IBOutlet UIPickerView *picker;
+    NSArray *hourArray;
+    NSArray *minuteArray;
+    NSArray *AMPMArray;
+}
+
 @property (weak, nonatomic) IBOutlet UIView *calendarView;
 
 @end
+
+
+

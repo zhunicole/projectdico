@@ -16,11 +16,72 @@
     calendarView.selectedDate = [NSDate date];
     NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow: -(60.0f*60.0f*24.0f)];
     calendarView.selectedDate = yesterday;
-
-//    calendarView.delegate = self; not sure what this does
-    
     NSLog(@"selected date: %@",calendarView.selectedDate);
 }
 
 
+-(void)viewDidLoad {
+    
+    [super viewDidLoad];
+    hourArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12", nil];
+    
+    minuteArray = [[NSArray alloc] initWithObjects:@"00",@"10",@"20",@"30",@"40",@"50", nil];
+    
+    AMPMArray = [[NSArray alloc] initWithObjects:@"AM",@"PM", nil];
+    picker.delegate = self;
+
+    
+}
+
+
+-(void)viewDidUnload {
+    [super viewDidUnload];
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 3;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+
+    if (component == 0) {
+        return [hourArray count];
+    } else if (component==1) {
+        return [minuteArray count];
+    } else {
+        return [AMPMArray count];
+    }
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component {
+    if (component == 0) {
+        NSString *selectedSTring = [hourArray objectAtIndex:row];
+        NSLog(@"selected hour: %@", selectedSTring);
+    } else if (component == 1) {
+        NSString *selectedSTring = [minuteArray objectAtIndex:row];
+        NSLog(@"selected hour: %@", selectedSTring);
+    } else {
+        NSString *selectedSTring = [AMPMArray objectAtIndex:row];
+        NSLog(@"selected hour: %@", selectedSTring);
+
+    }
+
+}
+
+
+// tell the picker the title for a given component
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    if (component == 0) {
+        return [hourArray objectAtIndex:row];
+    } else if (component == 1) {
+        return [minuteArray objectAtIndex:row];
+    } else {
+        return [AMPMArray objectAtIndex:row];
+    }
+    
+}
+
+
 @end
+
