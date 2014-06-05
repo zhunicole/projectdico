@@ -28,28 +28,54 @@ NSString *const MNCalendarViewCellIdentifier = @"MNCalendarViewCellIdentifier";
 
 @implementation MNCalendarViewCell
 
+
 - (id)initWithFrame:(CGRect)frame {
-  if (self = [super initWithFrame:frame]) {
-    self.backgroundColor = UIColor.whiteColor;
-    self.contentView.backgroundColor = UIColor.clearColor;
-    
-    self.titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
-    self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.titleLabel.font = [UIFont systemFontOfSize:14.f];
-    self.titleLabel.textColor = [UIColor whiteColor];
-    self.titleLabel.highlightedTextColor = [UIColor whiteColor];
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.userInteractionEnabled = NO;
-    self.titleLabel.backgroundColor = [UIColor colorWithRed:256.0/255.0 green:182.0/255.0 blue:75.0/255.0 alpha:1.f];
-    
-    [self.contentView addSubview:self.titleLabel];
-    
-    self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    self.selectedBackgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.23f green:0.61f blue:1.f alpha:1.f];
-  }
-  return self;
+    if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor colorWithRed:256.0/255.0 green:182.0/255.0 blue:75.0/255.0 alpha:1.f];
+        self.contentView.backgroundColor = UIColor.clearColor;
+        
+        self.titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
+        self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.titleLabel.font = [UIFont systemFontOfSize:14.f];
+        self.titleLabel.textColor = [UIColor darkTextColor];
+        self.titleLabel.highlightedTextColor = [UIColor whiteColor];
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.userInteractionEnabled = NO;
+        self.titleLabel.backgroundColor = [UIColor clearColor];
+        
+        [self.contentView addSubview:self.titleLabel];
+        
+        self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
+        self.selectedBackgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:248.0/255.0 green:205.0/255.0 blue:139.0/255.0 alpha:1.f];//
+    }
+    return self;
 }
+
+//- (id)initWithFrame:(CGRect)frame {
+//  if (self = [super initWithFrame:frame]) {
+////    self.backgroundColor = UIColor.whiteColor;
+//    self.contentView.backgroundColor = UIColor.clearColor;
+//    
+//    self.titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
+//    self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+//    self.titleLabel.font = [UIFont systemFontOfSize:14.f];
+//    self.titleLabel.textColor = [UIColor whiteColor];
+//    self.titleLabel.highlightedTextColor = [UIColor whiteColor];
+//    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+//    self.titleLabel.userInteractionEnabled = NO;
+//    self.titleLabel.backgroundColor = [UIColor colorWithRed:256.0/255.0 green:182.0/255.0 blue:75.0/255.0 alpha:1.f];
+//    
+//    [self.contentView addSubview:self.titleLabel];
+//    
+//      
+//    self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
+//    self.selectedBackgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+//    self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.23f green:0.61f blue:1.f alpha:1.f];
+//  }
+//    
+//  return self;
+//}
 
 - (void)layoutSubviews {
   [super layoutSubviews];

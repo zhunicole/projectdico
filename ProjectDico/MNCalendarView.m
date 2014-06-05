@@ -267,7 +267,10 @@
   }
 
   if (self.selectedDate && cell.enabled) {
+//      NSLog(@"selected cell here: %@", self.selectedDate);
+      //TODO selected style change
     [cell setSelected:[date isEqualToDate:self.selectedDate]];
+      
   }
   
   return cell;
@@ -285,7 +288,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     //TODO update view with staring with this method
-    NSLog(@"clicked on a cell");
+
     MNCalendarViewCell *cell = (MNCalendarViewCell *)[self collectionView:collectionView cellForItemAtIndexPath:indexPath];
 
   if ([cell isKindOfClass:MNCalendarViewDayCell.class] && cell.enabled) {
