@@ -28,6 +28,14 @@
     minuteArray = [[NSArray alloc] initWithObjects:@"00",@"10",@"20",@"30",@"40",@"50", nil];
     
     AMPMArray = [[NSArray alloc] initWithObjects:@"AM",@"PM", nil];
+    
+    
+    CGAffineTransform t0 = CGAffineTransformMakeTranslation (0, picker.bounds.size.height/2);
+    CGAffineTransform s0 = CGAffineTransformMakeScale       (1.0, 0.7);
+    CGAffineTransform t1 = CGAffineTransformMakeTranslation (0, -picker.bounds.size.height/2);
+    picker.transform = CGAffineTransformConcat          (t0, CGAffineTransformConcat(s0, t1));
+
+
     picker.delegate = self;
 
     
