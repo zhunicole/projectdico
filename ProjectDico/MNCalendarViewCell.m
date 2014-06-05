@@ -1,9 +1,9 @@
 //
 //  MNCalendarViewCell.m
-//  MNCalendarView
+//  ProjectDico
 //
-//  Created by Min Kim on 7/26/13.
-//  Copyright (c) 2013 min. All rights reserved.
+//  Created by Nicole Zhu on 5/25/14.
+//  Copyright (c) 2014 ProjectDico. All rights reserved.
 //
 
 #import "MNCalendarViewCell.h"
@@ -47,7 +47,7 @@ NSString *const MNCalendarViewCellIdentifier = @"MNCalendarViewCellIdentifier";
         
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
         self.selectedBackgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:248.0/255.0 green:205.0/255.0 blue:139.0/255.0 alpha:1.f];//
+        self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:249.0/255.0 green:237.0/255.0 blue:217.0/255.0 alpha:1.f];//
     }
     return self;
 }

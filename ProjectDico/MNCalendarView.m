@@ -1,10 +1,11 @@
 //
 //  MNCalendarView.m
-//  MNCalendarView
+//  ProjectDico
 //
-//  Created by Min Kim on 7/23/13.
-//  Copyright (c) 2013 min. All rights reserved.
+//  Created by Nicole Zhu on 5/25/14.
+//  Copyright (c) 2014 ProjectDico. All rights reserved.
 //
+
 
 #import "MNCalendarView.h"
 #import "MNCalendarViewLayout.h"
@@ -29,7 +30,14 @@
 - (NSDate *)lastVisibleDateOfMonth:(NSDate *)date;
 
 - (BOOL)dateEnabled:(NSDate *)date;
+- (BOOL)currentWeek:(NSDate *)date;
 - (BOOL)canSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+
+
+
+-(BOOL) isDate:(NSDate*)curDate LaterThanOrEqualTo:(NSDate*)date;
+-(BOOL) isDate:(NSDate*)curDate EarlierThanOrEqualTo:(NSDate*)date;
+
 
 - (void)applyConstraints;
 
@@ -183,6 +191,58 @@
   return YES;
 }
 
+- (BOOL)currentWeek:(NSDate *)date {
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];// you can use your format.
+    
+    //Week Start Date
+    
+    NSCalendar *gregorian = [[NSCalendar alloc]        initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *components = [gregorian components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    
+    int dayofweek = [[[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit fromDate:today] weekday];
+    
+    [components setDay:([components day] - ((dayofweek) - 1))];// for beginning of the week.
+    
+    NSDate *beginningOfWeek = [gregorian dateFromComponents:components];
+    NSDateFormatter *dateFormat_first = [[NSDateFormatter alloc] init];
+    [dateFormat_first setDateFormat:@"yyyy-MM-dd"];
+    
+    //Week End Date
+    NSCalendar *gregorianEnd = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *componentsEnd = [gregorianEnd components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    
+    int Enddayofweek = [[[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit fromDate:today] weekday];
+    
+    [componentsEnd setDay:([componentsEnd day]+(7-Enddayofweek))];// for end day of the week
+    
+    NSDate *EndOfWeek = [gregorianEnd dateFromComponents:componentsEnd];
+    NSDateFormatter *dateFormat_End = [[NSDateFormatter alloc] init];
+    [dateFormat_End setDateFormat:@"yyyy-MM-dd"];
+    
+    if ([self isDate:date LaterThanOrEqualTo:beginningOfWeek] &&
+        [self isDate:date EarlierThanOrEqualTo:EndOfWeek]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+
+-(BOOL) isDate:(NSDate*)curDate LaterThanOrEqualTo:(NSDate*)date {
+    return !([curDate compare:date] == NSOrderedAscending);
+}
+
+-(BOOL) isDate:(NSDate*)curDate EarlierThanOrEqualTo:(NSDate*)date {
+    return !([curDate compare:date] == NSOrderedDescending);
+}
+
+
+
+
 - (BOOL)canSelectItemAtIndexPath:(NSIndexPath *)indexPath {
   MNCalendarViewCell *cell = (MNCalendarViewCell *)[self collectionView:self.collectionView cellForItemAtIndexPath:indexPath];
 
@@ -266,11 +326,11 @@
     [cell setEnabled:[self dateEnabled:date]];
   }
 
+    [cell setCurrentWeek:[self currentWeek:date]];
+
+
   if (self.selectedDate && cell.enabled) {
-//      NSLog(@"selected cell here: %@", self.selectedDate);
-      //TODO selected style change
     [cell setSelected:[date isEqualToDate:self.selectedDate]];
-      
   }
   
   return cell;
