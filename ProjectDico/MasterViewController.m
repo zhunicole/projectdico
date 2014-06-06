@@ -16,7 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *masterTable;
 @property (nonatomic, strong) NSMutableArray *TasksArray;
-//@property (strong, nonatomic) NSMutableArray *cards;
 
 
 @end
@@ -34,42 +33,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.masterTable setDelegate:self];
+//    [self.masterTable setDelegate:self];
 //    self.TasksArray;
     //load categories
     [TaskCategory uploadCategories];
     [SubCategory uploadSubCategories];
+    [self setTasksArray];
+
     
 }
 
-- (NSMutableArray *)TasksArray{
+- (void)setTasksArray{
     if (!_TasksArray){
         _TasksArray = [[NSMutableArray alloc] init];
-        [self queryForTasks];
-    }
-    return self.TasksArray;
-
-}
-
--(void) queryForTasks {
-    PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-//            [self.masterTable reloadData];   // Reload table
-            
-            self.TasksArray = [[NSMutableArray alloc] initWithCapacity:objects.count];
-
-            for (PFObject *object in objects) {
-                NSString *title = object[@"taskTitle"];
-                [self.TasksArray addObject:title] ;           // Store results
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                //            [self.masterTable reloadData];   // Reload table
+                
+                self.TasksArray = [[NSMutableArray alloc] initWithCapacity:objects.count];
+                
+                for (PFObject *object in objects) {
+                    NSString *title = object[@"taskTitle"];
+                    [self.TasksArray addObject:title] ;           // Store results
+                }
+                [self.tableView reloadData];   // Reload table
+                
+            } else {
+                NSLog(@"Parse errro");
             }
-            [self.masterTable reloadData];   // Reload table
-
-        } else {
-            NSLog(@"Parse errro");
-        }
-    }];
-
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,15 +79,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
-    
+
+    return self.TasksArray.count;
+
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
-    
-    
     [cell.textLabel setText:[self.TasksArray objectAtIndex:indexPath.row]];
     return cell;
 }

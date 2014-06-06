@@ -13,38 +13,44 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Xy3-wp-eax" kind="relationship" relationship="rootViewController" id="23u-Ud-p2E"/>
+                        <segue destination="GFx-jS-8yK" kind="relationship" relationship="rootViewController" id="cB1-pP-Uub"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-601" y="80"/>
         </scene>
-        <!--CategoryTVC-->
+        <!--Master View Controller - Dico-->
         <scene sceneID="yAk-n5-zTL">
             <objects>
-                <tableViewController id="GFx-jS-8yK" customClass="CategoryTVC" sceneMemberID="viewController">
+                <tableViewController id="GFx-jS-8yK" customClass="MasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="O5D-6k-V5m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="d8k-HR-btK">
-                            <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem image="cameraBtn" style="plain" id="B3j-qH-JOK">
                                     <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="vmn-RP-o6H" kind="modal" identifier="addTask" id="WFB-8P-5Yq"/>
+                                    </connections>
                                 </barButtonItem>
                             </items>
                         </toolbar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryCell" id="TJK-8u-UB3">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskCell" id="TJK-8u-UB3">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TJK-8u-UB3" id="QTB-ks-anV">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" id="mC3-mV-hFf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -52,10 +58,11 @@
                             <outlet property="delegate" destination="GFx-jS-8yK" id="Vpw-kp-jCp"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Dico" id="dQM-wi-Zxe"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUJ-Jg-4Z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-612" y="786"/>
+            <point key="canvasLocation" x="-48" y="80"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="KWf-OV-vPE">
@@ -142,9 +149,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" id="mxF-UN-Afl"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -163,7 +167,6 @@
                                 </state>
                                 <connections>
                                     <action selector="newTaskBtn:" destination="Xy3-wp-eax" eventType="touchUpInside" id="QbH-P7-Kag"/>
-                                    <segue destination="vmn-RP-o6H" kind="modal" identifier="addTask" id="bvD-5N-qQu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -185,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIk-5B-9mI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="90"/>
+            <point key="canvasLocation" x="464" y="-40"/>
         </scene>
         <!--CategoryTVC - Category-->
         <scene sceneID="vaQ-0B-9de">
@@ -668,7 +671,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mxF-UN-Afl"/>
-        <segue reference="23u-Ud-p2E"/>
+        <segue reference="mC3-mV-hFf"/>
     </inferredMetricsTieBreakers>
 </document>
