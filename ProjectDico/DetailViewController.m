@@ -24,6 +24,7 @@
         // Update the view.
         [self configureView];
     }
+    
 }
 
 - (void)configureView
@@ -38,11 +39,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
     [self configureView];
     
-//    
-//    [callDicoButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(hideKeyBoard)];
+    
+    [self.view addGestureRecognizer:tapGesture];
+}
+
+
+
+-(void)hideKeyBoard {
+    [taskTitleTextField resignFirstResponder];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,12 +77,11 @@ static NSString * const kDicoNumber = @"6263846965";
 - (IBAction)handleUploadPhotoTouch:(id)sender {
     
     mediaPicker = [[UIImagePickerController alloc] init];
-//    [mediaPicker setDelegate:self];
     mediaPicker.allowsEditing = YES;
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                                 delegate:self
+                                                                 delegate:(id)self
                                                         cancelButtonTitle:@"Cancel"
                                                    destructiveButtonTitle:nil
                                                         otherButtonTitles:@"Take photo", @"Choose Existing", nil];

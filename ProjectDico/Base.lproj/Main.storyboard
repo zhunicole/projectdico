@@ -362,6 +362,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="callDicoButton" destination="p7R-sh-wh2" id="dn2-b9-PDO"/>
+                        <outlet property="taskTitleTextField" destination="k5J-Ib-Eax" id="Rgf-Yq-iyY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>

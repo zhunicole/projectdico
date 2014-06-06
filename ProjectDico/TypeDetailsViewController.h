@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PlaceHolderForTextview.h"
 
-@interface TypeDetailsViewController : UIViewController
+@interface TypeDetailsViewController : UIViewController {
+}
 
 @end

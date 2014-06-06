@@ -10,6 +10,8 @@
 
 @interface DetailViewController : UIViewController {
     UIImagePickerController *mediaPicker;
+    __weak IBOutlet UITextField *taskTitleTextField;
+
 }
 
 @property (strong, nonatomic) id detailItem;
