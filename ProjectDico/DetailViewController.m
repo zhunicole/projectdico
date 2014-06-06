@@ -7,7 +7,6 @@
 //
 
 #import "DetailViewController.h"
-#import "RecordController.h"
 
 @interface DetailViewController ()
 - (void)configureView;

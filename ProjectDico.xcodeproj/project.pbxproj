@@ -14,7 +14,6 @@
 		D128579B193E835500C84A9C /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1285797193E835500C84A9C /* OpenEars.framework */; };
 		D128579C193E835500C84A9C /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1285798193E835500C84A9C /* Slt.framework */; };
 		D128579E193E836900C84A9C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D128579D193E836900C84A9C /* AVFoundation.framework */; };
-		D12857A4193E83A700C84A9C /* RecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857A3193E83A700C84A9C /* RecordController.m */; };
 		D12857B5193EBEED00C84A9C /* MNCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857A6193EBEED00C84A9C /* MNCalendarHeaderView.m */; };
 		D12857B6193EBEED00C84A9C /* MNCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857A8193EBEED00C84A9C /* MNCalendarView.m */; };
 		D12857B7193EBEED00C84A9C /* MNCalendarViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857AA193EBEED00C84A9C /* MNCalendarViewCell.m */; };
@@ -34,7 +33,6 @@
 		D13D21831931422800527710 /* ProjectDico.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D13D21811931422800527710 /* ProjectDico.xcdatamodeld */; };
 		D13D21861931422800527710 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13D21851931422800527710 /* MasterViewController.m */; };
 		D13D21891931422800527710 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13D21881931422800527710 /* DetailViewController.m */; };
-		D13D218B1931422800527710 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13D218A1931422800527710 /* Images.xcassets */; };
 		D13D21921931422800527710 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D21911931422800527710 /* XCTest.framework */; };
 		D13D21931931422800527710 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D216A1931422700527710 /* Foundation.framework */; };
 		D13D21941931422800527710 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D216E1931422800527710 /* UIKit.framework */; };
@@ -65,6 +63,7 @@
 		D1BB7637193A996600679C7E /* TaskCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7636193A996600679C7E /* TaskCategory.m */; };
 		D1C6386D1941429D00C65E11 /* PlaceHolderForTextview.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C6386C1941429D00C65E11 /* PlaceHolderForTextview.m */; };
 		D1C638701941439700C65E11 /* TypeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C6386F1941439700C65E11 /* TypeDetailsViewController.m */; };
+		D1C638731941726A00C65E11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C638721941726A00C65E11 /* Images.xcassets */; };
 		D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6E919315B500035FCFF /* CategoryTVC.m */; };
 		D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */; };
 /* End PBXBuildFile section */
@@ -89,8 +88,6 @@
 		D1285797193E835500C84A9C /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
 		D1285798193E835500C84A9C /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		D128579D193E836900C84A9C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		D12857A2193E83A700C84A9C /* RecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordController.h; sourceTree = "<group>"; };
-		D12857A3193E83A700C84A9C /* RecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordController.m; sourceTree = "<group>"; };
 		D12857A5193EBEED00C84A9C /* MNCalendarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarHeaderView.h; sourceTree = "<group>"; };
 		D12857A6193EBEED00C84A9C /* MNCalendarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarHeaderView.m; sourceTree = "<group>"; };
 		D12857A7193EBEED00C84A9C /* MNCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarView.h; sourceTree = "<group>"; };
@@ -124,7 +121,6 @@
 		D13D21851931422800527710 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		D13D21871931422800527710 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D13D21881931422800527710 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		D13D218A1931422800527710 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D13D21901931422800527710 /* ProjectDicoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectDicoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13D21911931422800527710 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D13D219A1931422800527710 /* ProjectDicoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjectDicoTests-Info.plist"; sourceTree = "<group>"; };
@@ -167,6 +163,7 @@
 		D1C6386C1941429D00C65E11 /* PlaceHolderForTextview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceHolderForTextview.m; sourceTree = "<group>"; };
 		D1C6386E1941439700C65E11 /* TypeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDetailsViewController.h; sourceTree = "<group>"; };
 		D1C6386F1941439700C65E11 /* TypeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeDetailsViewController.m; sourceTree = "<group>"; };
+		D1C638721941726A00C65E11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1E7C6E819315B500035FCFF /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		D1E7C6E919315B500035FCFF /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoryTVC.h; sourceTree = "<group>"; };
@@ -218,8 +215,6 @@
 			children = (
 				D13D21871931422800527710 /* DetailViewController.h */,
 				D13D21881931422800527710 /* DetailViewController.m */,
-				D12857A2193E83A700C84A9C /* RecordController.h */,
-				D12857A3193E83A700C84A9C /* RecordController.m */,
 				D128578D193E7C7100C84A9C /* CalendarController.h */,
 				D128578E193E7C7100C84A9C /* CalendarController.m */,
 				D1285791193E7DE000C84A9C /* CameraController.h */,
@@ -321,8 +316,8 @@
 				D13D217C1931422800527710 /* AppDelegate.m */,
 				D13D217E1931422800527710 /* Main.storyboard */,
 				D1E7C6EE19315B750035FCFF /* Controllers */,
-				D13D218A1931422800527710 /* Images.xcassets */,
 				D13D21811931422800527710 /* ProjectDico.xcdatamodeld */,
+				D1C638721941726A00C65E11 /* Images.xcassets */,
 				D13D21731931422800527710 /* Supporting Files */,
 			);
 			path = ProjectDico;
@@ -360,8 +355,6 @@
 		D171D39419316F12007F525D /* UserAccounts */ = {
 			isa = PBXGroup;
 			children = (
-				D176927F1932C3010096A662 /* TabBarController.h */,
-				D17692801932C3010096A662 /* TabBarController.m */,
 				D17692791932B7AF0096A662 /* WelcomeViewController.h */,
 				D176927A1932B7AF0096A662 /* WelcomeViewController.m */,
 				D171D39119316F08007F525D /* LoginViewController.h */,
@@ -407,16 +400,26 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		D1E7C6EE19315B750035FCFF /* Controllers */ = {
+		D1C6387119414DD000C65E11 /* MainControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D171D39419316F12007F525D /* UserAccounts */,
 				D13D21841931422800527710 /* MasterViewController.h */,
 				D13D21851931422800527710 /* MasterViewController.m */,
 				D1E7C6E819315B500035FCFF /* CategoryTVC.h */,
 				D1E7C6E919315B500035FCFF /* CategoryTVC.m */,
 				D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */,
 				D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */,
+				D176927F1932C3010096A662 /* TabBarController.h */,
+				D17692801932C3010096A662 /* TabBarController.m */,
+			);
+			name = MainControllers;
+			sourceTree = "<group>";
+		};
+		D1E7C6EE19315B750035FCFF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D171D39419316F12007F525D /* UserAccounts */,
+				D1C6387119414DD000C65E11 /* MainControllers */,
 				D1285790193E7C7D00C84A9C /* TaskDetailControllers */,
 			);
 			name = Controllers;
@@ -501,8 +504,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D13D218B1931422800527710 /* Images.xcassets in Resources */,
 				D128579A193E835500C84A9C /* AcousticModelSpanish.bundle in Resources */,
+				D1C638731941726A00C65E11 /* Images.xcassets in Resources */,
 				D1285799193E835500C84A9C /* AcousticModelEnglish.bundle in Resources */,
 				D13D21771931422800527710 /* InfoPlist.strings in Resources */,
 				D13D21801931422800527710 /* Main.storyboard in Resources */,
@@ -535,7 +538,6 @@
 				D12857B8193EBEED00C84A9C /* MNCalendarViewDayCell.m in Sources */,
 				D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */,
 				D12857B7193EBEED00C84A9C /* MNCalendarViewCell.m in Sources */,
-				D12857A4193E83A700C84A9C /* RecordController.m in Sources */,
 				D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */,
 				D1BB7637193A996600679C7E /* TaskCategory.m in Sources */,
 				D13D21861931422800527710 /* MasterViewController.m in Sources */,
