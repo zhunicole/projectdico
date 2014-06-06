@@ -50,8 +50,7 @@
 }
 
 -(void) setDefaultStyles {
-//    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blueColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"FontName" size:15], NSFontAttributeName, nil]];
-    
+
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:80/255.0 green:188.0/255.0 blue:182.0/255.0 alpha:1.000]];
