@@ -57,14 +57,45 @@ static NSString * const kDicoNumber = @"6263846965";
     NSLog(@"callling");
     NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@", kDicoNumber]];
     
-//    if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
-        [[UIApplication sharedApplication] openURL:phoneUrl];
-//    }
+    [[UIApplication sharedApplication] openURL:phoneUrl];
 }
 
 //
 ////CAMERA
 //
+- (IBAction)handleUploadPhotoTouch:(id)sender {
+    
+    mediaPicker = [[UIImagePickerController alloc] init];
+//    [mediaPicker setDelegate:self];
+    mediaPicker.allowsEditing = YES;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Cancel"
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"Take photo", @"Choose Existing", nil];
+        [actionSheet showInView:self.view];
+    } else {
+        mediaPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:mediaPicker animated:YES completion:nil];
+
+    }
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        mediaPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else if (buttonIndex == 1) {
+        mediaPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentViewController:mediaPicker animated:YES completion:nil];
+
+//    [actionSheet release];
+}
+
 //- (BOOL) startCameraControllerFromViewController: (UIViewController*) controller
 //                                   usingDelegate: (id <UIImagePickerControllerDelegate,
 //                                                   UINavigationControllerDelegate>) delegate {
