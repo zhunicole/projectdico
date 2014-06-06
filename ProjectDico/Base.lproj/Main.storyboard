@@ -462,7 +462,11 @@
                                 <segue destination="PtM-NK-fBR" kind="unwind" unwindAction="goToDetailViewController:" id="cj1-Cz-3tq"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="kLr-o8-Hie"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="kLr-o8-Hie">
+                            <connections>
+                                <segue destination="PtM-NK-fBR" kind="unwind" unwindAction="goToDetailViewController:" id="0fL-Ej-K9e"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVk-8W-yhH" userLabel="First Responder" sceneMemberID="firstResponder"/>

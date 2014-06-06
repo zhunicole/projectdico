@@ -39,7 +39,7 @@
     PFACL *defaultACL = [PFACL ACL]; //read/write permissions to spec users
     [defaultACL setPublicReadAccess:YES]; //public read access by default
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
-    
+    [self setDefaultStyles];
 //    [self monitorReachability];
     
     [PFFacebookUtils initializeFacebook];
@@ -47,6 +47,16 @@
 
     NSLog(@"end of this fn");
     return YES;
+}
+
+-(void) setDefaultStyles {
+//    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blueColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"FontName" size:15], NSFontAttributeName, nil]];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:80/255.0 green:188.0/255.0 blue:182.0/255.0 alpha:1.000]];
+
+
 }
 
 - (void)handlePush:(NSDictionary *)launchOptions {
