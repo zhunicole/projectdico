@@ -36,15 +36,13 @@
     }
 }
 
-//@synthesize taskId;
--(void)setTaskId:(NSString *)taskId {
-    NSLog(@"here");
-    
-    if (!_taskId) {
-        _taskId = taskId;
-    }
-
-}
+//-(void)setTaskId:(NSString *)taskId {
+//    
+//    if (!_taskId) {
+//        _taskId = taskId;
+//    }
+//
+//}
 
 - (void)viewDidLoad
 {
@@ -57,57 +55,57 @@
                                            action:@selector(hideKeyBoard)];
     
     [self.view addGestureRecognizer:tapGesture];
-    
-    
-    //if the taskId doesn't exist yet in controller (not passed in from main)
+   
+}
+
+//initializes task in DB
+-(void) createTask {
     if ([self.taskId isEqualToString:@"0"]) {  //if new task
         PFObject *newTask = [PFObject objectWithClassName:@"tasks"];
-//       TODO figure this out newTask[@"username"] =
-        
-        newTask[@"taskTitle"] = @"No Task Name";
+        //       TODO figure this out newTask[@"username"] =
         newTask[@"progress"] = @0;
-        [newTask save];
-
-        NSLog(@"Task ID is: %@", [newTask objectId] );
-        //TODO get and save tasks objectId
         
-    } else {    //if accessing a saved task
+        NSString *title = [taskTitleTextField text];
+        NSLog(@"title: %@", title);
+        if([title length]>0) {
+            newTask[@"taskTitle"] = title;
+        } else {
+            newTask[@"taskTitle"] = @"No Task Name";
+        }
+
+        [newTask save];
+        self.taskId = [newTask objectId];
+        NSLog(@"Task ID is: %@", [newTask objectId] );
+    }
+
+}
+
+//SAVE/CREATES tasks
+- (IBAction)saveTaskBtn:(id)sender {
+    if ([self.taskId isEqualToString:@"0"]) {
+        [self createTask];
+        
+    } else {// save updates only (for when taskId exists)
         PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
         [query whereKey:@"objectId" equalTo:self.taskId];
-        
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if ([objects count] > 0) { //has a complete list
-                NSLog(@"found task");
+        [query getFirstObjectInBackgroundWithBlock:^(PFObject *task, NSError *error){
+            if (!error) { //has a complete list
+                //if gets that obj update title
+                NSString *title = [taskTitleTextField text];
+                NSLog(@"title: %@", title);
+                if(title && [title length] > 0) {
+                    task[@"taskTitle"] = title;
+                } else {
+                    task[@"taskTitle"] = @"No Task Name";
+                }
             } else {
                 NSLog(@"saved task is not in db for some reason");
             }
         }];
-
     }
-    
-   
-}
-
-
-//SAVE task instead of outsource
-- (IBAction)saveTaskBtn:(id)sender {
     NSLog(@"clicked save");
     
-    //TODO save to DB here. dep on the information availablable
-    
-    
-    //check if taskID is in DB (called objectId in db)
-    
-    //else
-        //check if title
-            //save title
-            //save username
-    
-    
-        //else
-            //give title "Task name?"
 }
-
 
 
 -(void)hideKeyBoard {

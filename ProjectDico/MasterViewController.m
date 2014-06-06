@@ -50,13 +50,10 @@
         PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
-                //            [self.masterTable reloadData];   // Reload table
-                
                 self.TasksArray = [[NSMutableArray alloc] initWithCapacity:objects.count];
-                
                 for (PFObject *object in objects) {
                     NSString *title = object[@"taskTitle"];
-                    [self.TasksArray addObject:title] ;           // Store results
+                    if(title)  [self.TasksArray addObject:title] ;           // title is nil?? store results
                 }
                 [self.tableView reloadData];   // Reload table
                 
@@ -90,6 +87,50 @@
     [cell.textLabel setText:[self.TasksArray objectAtIndex:indexPath.row]];
     return cell;
 }
+
+
+
+
+#pragma mark - Navigation
+
+- (NSString *)getObjectIdForTitle: (NSString *) taskTitle {
+    NSLog(@"taskTitle: %@", taskTitle);
+    PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
+    [query whereKey:@"taskTitle" equalTo:taskTitle];
+    
+    NSString *objectID = nil;
+    NSArray *tasks=[query findObjects];
+    PFObject *task = [tasks objectAtIndex:0];
+    objectID = task.objectId;
+   
+    return objectID;
+    
+}
+- (void)prepareVC:(DetailViewController *)ivc
+          forTask:(NSString *)taskTitle
+
+{
+    //get current taskId
+    ivc.taskId = [self getObjectIdForTitle:taskTitle];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSInteger path = [[[self tableView] indexPathForSelectedRow] row];
+    
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        if (indexPath) {
+            if ([segue.identifier isEqualToString:@"showDetail"]) {
+                NSString *taskTitle = [self.TasksArray objectAtIndex: path];
+                [self prepareVC:segue.destinationViewController forTask:taskTitle];
+                
+            }
+        }
+    }
+}
+
 
 
 - (IBAction)goToMasterViewController :(UIStoryboardSegue*)segue {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GFx-jS-8yK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -84,7 +84,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonTouchHandler:" destination="E1N-D9-vLC" eventType="touchUpInside" id="Hj4-pK-iU7"/>
-                                    <segue destination="Xy3-wp-eax" kind="push" id="huN-Rh-L2h"/>
+                                    <segue destination="GFx-jS-8yK" kind="push" identifier="Homepage" id="mLB-vd-XQ9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,71 +124,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QiW-uj-znx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="425" y="-703"/>
-        </scene>
-        <!--Master View Controller - Master-->
-        <scene sceneID="kZj-FS-Jwr">
-            <objects>
-                <viewController title="Master" id="Xy3-wp-eax" customClass="MasterViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ufg-PF-wRO"/>
-                        <viewControllerLayoutGuide type="bottom" id="7zD-H2-Wgc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1c3-MY-cNN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jjE-LF-mJ3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TaskCell" id="Ybx-Z0-KDh">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ybx-Z0-KDh" id="S2R-rP-lUh">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Xy3-wp-eax" id="LU9-kY-tVM"/>
-                                    <outlet property="delegate" destination="Xy3-wp-eax" id="SOe-87-exw"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CP6-A7-WYz">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.31372549019607843" green="0.73725490196078436" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="newTaskBtn:" destination="Xy3-wp-eax" eventType="touchUpInside" id="QbH-P7-Kag"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="jjE-LF-mJ3" secondAttribute="bottom" id="HMc-MR-bnO"/>
-                            <constraint firstAttribute="trailing" secondItem="CP6-A7-WYz" secondAttribute="trailing" id="KAO-6x-Op6"/>
-                            <constraint firstItem="jjE-LF-mJ3" firstAttribute="leading" secondItem="1c3-MY-cNN" secondAttribute="leading" id="UoR-wu-AF3"/>
-                            <constraint firstItem="jjE-LF-mJ3" firstAttribute="trailing" secondItem="CP6-A7-WYz" secondAttribute="trailing" id="WhH-nU-c6e"/>
-                            <constraint firstItem="jjE-LF-mJ3" firstAttribute="top" secondItem="1c3-MY-cNN" secondAttribute="top" id="Xtf-ot-iNy"/>
-                            <constraint firstItem="jjE-LF-mJ3" firstAttribute="bottom" secondItem="CP6-A7-WYz" secondAttribute="bottom" constant="10" id="cdd-Bo-E3c" userLabel="Bottom Alignment - Button - Table View - +"/>
-                            <constraint firstItem="CP6-A7-WYz" firstAttribute="leading" secondItem="jjE-LF-mJ3" secondAttribute="leading" id="x3N-0i-Dtl"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="DICO" id="S5A-OO-aAc"/>
-                    <connections>
-                        <outlet property="masterTable" destination="jjE-LF-mJ3" id="L2H-uS-A2f"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KIk-5B-9mI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="464" y="-40"/>
         </scene>
         <!--CategoryTVC - Category-->
         <scene sceneID="vaQ-0B-9de">
@@ -455,10 +390,9 @@
                                 <segue destination="AQ5-s9-DNH" kind="unwind" unwindAction="goToMasterViewController:" id="r2o-g6-scX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="oV8-n0-6pQ">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="oV8-n0-6pQ">
                             <connections>
                                 <action selector="saveTaskBtn:" destination="Ah7-4n-0Wa" id="5Ue-Td-IAg"/>
-                                <segue destination="AQ5-s9-DNH" kind="unwind" unwindAction="goToMasterViewController:" id="GDc-bs-x89"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -671,6 +605,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="mLB-vd-XQ9"/>
         <segue reference="mC3-mV-hFf"/>
     </inferredMetricsTieBreakers>
 </document>
