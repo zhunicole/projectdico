@@ -52,45 +52,16 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:80/255.0 green:188.0/255.0 blue:182.0/255.0 alpha:1.000]];
+    
+    [[UIToolbar appearance] setBarTintColor:[UIColor colorWithRed:80/255.0 green:188.0/255.0 blue:182.0/255.0 alpha:1.000]];
+    
 
-
+    
 }
 
 - (void)handlePush:(NSDictionary *)launchOptions {
     NSLog(@"annoying handle push function");
-    // If the app was launched in response to a push notification, we'll handle the payload here
-//    NSDictionary *remoteNotificationPayload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-//    if (remoteNotificationPayload) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:AppDelegateApplicationDidReceiveRemoteNotification object:nil userInfo:remoteNotificationPayload];
-//        
-//        if (![PFUser currentUser]) {
-//            return;
-//        }
-//        
-//        // If the push notification payload references a photo, we will attempt to push this view controller into view
-//        NSString *photoObjectId = [remoteNotificationPayload objectForKey:kPAPPushPayloadPhotoObjectIdKey];
-//        if (photoObjectId && photoObjectId.length > 0) {
-//            [self shouldNavigateToPhoto:[PFObject objectWithoutDataWithClassName:kPAPPhotoClassKey objectId:photoObjectId]];
-//            return;
-//        }
-//        
-//        // If the push notification payload references a user, we will attempt to push their profile into view
-//        NSString *fromObjectId = [remoteNotificationPayload objectForKey:kPAPPushPayloadFromUserObjectIdKey];
-//        if (fromObjectId && fromObjectId.length > 0) {
-//            PFQuery *query = [PFUser query];
-//            query.cachePolicy = kPFCachePolicyCacheElseNetwork;
-//            [query getObjectInBackgroundWithId:fromObjectId block:^(PFObject *user, NSError *error) {
-//                if (!error) {
-//                    UINavigationController *homeNavigationController = self.tabBarController.viewControllers[HomeTabBarItemIndex];
-//                    self.tabBarController.selectedViewController = homeNavigationController;
-//                    
-//                    AccountViewController *accountViewController = [[AccountViewController alloc] initWithStyle:UITableViewStylePlain];
-//                    accountViewController.user = (PFUser *)user;
-//                    [homeNavigationController pushViewController:accountViewController animated:YES];
-//                }
-//            }];
-//        }
-//    }
+
 }
 
 
@@ -199,124 +170,7 @@
 
 - (void)facebookRequestDidLoad:(id)result {
     NSLog(@"fbrequest did load");
-    // This method is called twice - once for the user's /me profile, and a second time when obtaining their friends. We will try and handle both scenarios in a single method.
-//    PFUser *user = [PFUser currentUser];
-    
-//    NSArray *data = [result objectForKey:@"data"];
-    
-//    if (data) {
-//        // we have friends data
-//        NSMutableArray *facebookIds = [[NSMutableArray alloc] initWithCapacity:[data count]];
-//        for (NSDictionary *friendData in data) {
-//            if (friendData[@"id"]) {
-//                [facebookIds addObject:friendData[@"id"]];
-//            }
-//        }
-//        
-//        // cache friend data
-//        [[Cache sharedCache] setFacebookFriends:facebookIds];
-//        
-//        if (user) {
-//            if ([user objectForKey:kPAPUserFacebookFriendsKey]) {
-//                [user removeObjectForKey:kPAPUserFacebookFriendsKey];
-//            }
-//            
-//            if (![user objectForKey:kPAPUserAlreadyAutoFollowedFacebookFriendsKey]) {
-//                self.hud.labelText = NSLocalizedString(@"Following Friends", nil);
-//                firstLaunch = YES;
-//                
-//                [user setObject:@YES forKey:kPAPUserAlreadyAutoFollowedFacebookFriendsKey];
-//                NSError *error = nil;
-//                
-//                // find common Facebook friends already using Anypic
-//                PFQuery *facebookFriendsQuery = [PFUser query];
-//                [facebookFriendsQuery whereKey:kPAPUserFacebookIDKey containedIn:facebookIds];
-//                
-//                // auto-follow Parse employees
-//                PFQuery *parseEmployeesQuery = [PFUser query];
-//                [parseEmployeesQuery whereKey:kPAPUserFacebookIDKey containedIn:kPAPParseEmployeeAccounts];
-//                
-//                // combined query
-//                PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:parseEmployeesQuery,facebookFriendsQuery, nil]];
-//                
-//                NSArray *anypicFriends = [query findObjects:&error];
-//                
-//                if (!error) {
-//                    [anypicFriends enumerateObjectsUsingBlock:^(PFUser *newFriend, NSUInteger idx, BOOL *stop) {
-//                        PFObject *joinActivity = [PFObject objectWithClassName:kPAPActivityClassKey];
-//                        [joinActivity setObject:user forKey:kPAPActivityFromUserKey];
-//                        [joinActivity setObject:newFriend forKey:kPAPActivityToUserKey];
-//                        [joinActivity setObject:kPAPActivityTypeJoined forKey:kPAPActivityTypeKey];
-//                        
-//                        PFACL *joinACL = [PFACL ACL];
-//                        [joinACL setPublicReadAccess:YES];
-//                        joinActivity.ACL = joinACL;
-//                        
-//                        // make sure our join activity is always earlier than a follow
-//                        [joinActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//                            [PAPUtility followUserInBackground:newFriend block:^(BOOL succeeded, NSError *error) {
-//                                // This block will be executed once for each friend that is followed.
-//                                // We need to refresh the timeline when we are following at least a few friends
-//                                // Use a timer to avoid refreshing innecessarily
-//                                if (self.autoFollowTimer) {
-//                                    [self.autoFollowTimer invalidate];
-//                                }
-//                                
-//                                self.autoFollowTimer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(autoFollowTimerFired:) userInfo:nil repeats:NO];
-//                            }];
-//                        }];
-//                    }];
-//                }
-//                
-//                if (![self shouldProceedToMainInterface:user]) {
-//                    [self logOut];
-//                    return;
-//                }
-//                
-//                if (!error) {
-//                    [MBProgressHUD hideHUDForView:self.navController.presentedViewController.view animated:NO];
-//                    if (anypicFriends.count > 0) {
-//                        self.hud = [MBProgressHUD showHUDAddedTo:self.homeViewController.view animated:NO];
-//                        self.hud.dimBackground = YES;
-//                        self.hud.labelText = NSLocalizedString(@"Following Friends", nil);
-//                    } else {
-//                        [self.homeViewController loadObjects];
-//                    }
-//                }
-//            }
-//            
-//            [user saveEventually];
-//        } else {
-//            NSLog(@"No user session found. Forcing logOut.");
-//            [self logOut];
-//        }
-//    } else {
-//        self.hud.labelText = NSLocalizedString(@"Creating Profile", nil);
-//        
-//        if (user) {
-//            NSString *facebookName = result[@"name"];
-//            if (facebookName && [facebookName length] != 0) {
-//                [user setObject:facebookName forKey:kPAPUserDisplayNameKey];
-//            } else {
-//                [user setObject:@"Someone" forKey:kPAPUserDisplayNameKey];
-//            }
-//            
-//            NSString *facebookId = result[@"id"];
-//            if (facebookId && [facebookId length] != 0) {
-//                [user setObject:facebookId forKey:kPAPUserFacebookIDKey];
-//            }
-//            
-//            [user saveEventually];
-//        }
-//        
-//        [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-//            if (!error) {
-//                [self facebookRequestDidLoad:result];
-//            } else {
-//                [self facebookRequestDidFailWithError:error];
-//            }
-//        }];
-//    }
+
 }
 
 - (void)facebookRequestDidFailWithError:(NSError *)error {
@@ -347,23 +201,6 @@
 - (void) monitorReachability {
     NSLog(@"monitoring reachability");
 
-//    Reachability *hostReach = [Reachability reachabilityWithHostname:@"api.parse.com"];
-//    
-//    hostReach.reachableBlock = ^(Reachability*reach) {
-//        _networkStatus = [reach currentReachabilityStatus];
-//        
-//        if ([self isParseReachable] && [PFUser currentUser] && self.MasterViewController.objects.count == 0) {
-//            // Refresh home timeline on network restoration. Takes care of a freshly installed app that failed to load the main timeline under bad network conditions.
-//            // In this case, they'd see the empty timeline placeholder and have no way of refreshing the timeline unless they followed someone.
-//            [self.MasterViewController loadObjects];
-//        }
-//    };
-//    
-//    hostReach.unreachableBlock = ^(Reachability*reach) {
-//        _networkStatus = [reach currentReachabilityStatus];
-//    };
-//    
-//    [hostReach startNotifier];
 }
 
 

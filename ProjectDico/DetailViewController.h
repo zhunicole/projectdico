@@ -13,6 +13,7 @@
 @interface DetailViewController : UIViewController {
     UIImagePickerController *mediaPicker;
     __weak IBOutlet UITextField *taskTitleTextField;
+    NSString *newTitle;
 
 }
 
@@ -21,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @property (nonatomic, strong) NSString *taskId;
-
+@property (nonatomic, strong) NSString *taskTitle;
 
 
 - (IBAction)callDico:(UIButton*)sender;

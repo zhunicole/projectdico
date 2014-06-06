@@ -28,12 +28,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="d8k-HR-btK">
+                        <toolbar key="tableFooterView" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="d8k-HR-btK">
                             <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem image="cameraBtn" style="plain" id="B3j-qH-JOK">
-                                    <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <barButtonItem title="+" width="288" style="plain" id="B3j-qH-JOK">
+                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="vmn-RP-o6H" kind="modal" identifier="addTask" id="WFB-8P-5Yq"/>
                                     </connections>
@@ -298,6 +298,9 @@
                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="updateTitle:" destination="Ah7-4n-0Wa" eventType="editingDidEnd" id="yqc-bb-yCM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How would you like to" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="170" translatesAutoresizingMaskIntoConstraints="NO" id="jMP-1z-BJt">
                                 <rect key="frame" x="75" y="171" width="170" height="21"/>
@@ -390,9 +393,10 @@
                                 <segue destination="AQ5-s9-DNH" kind="unwind" unwindAction="goToMasterViewController:" id="r2o-g6-scX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="oV8-n0-6pQ">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="oV8-n0-6pQ">
                             <connections>
                                 <action selector="saveTaskBtn:" destination="Ah7-4n-0Wa" id="5Ue-Td-IAg"/>
+                                <segue destination="AQ5-s9-DNH" kind="unwind" unwindAction="goToMasterViewController:" id="YZo-eA-RDE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -405,32 +409,6 @@
                 <exit id="AQ5-s9-DNH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1880" y="107"/>
-        </scene>
-        <!--Record Controller-->
-        <scene sceneID="jQ6-s1-nBm">
-            <objects>
-                <viewController id="80t-1F-HA6" customClass="RecordController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eDQ-EB-eJa"/>
-                        <viewControllerLayoutGuide type="bottom" id="wDV-3i-Y8j"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oga-QC-ofT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="foO-Lz-aJX">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="hTv-Tp-tei">
-                            <connections>
-                                <segue destination="xhz-73-YLq" kind="unwind" unwindAction="goToDetailViewController:" id="Cy6-0i-368"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PM7-mV-1j0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="xhz-73-YLq" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2224" y="-583"/>
         </scene>
         <!--Calendar Controller-->
         <scene sceneID="UWe-eG-BIv">

@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "MasterViewController.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -36,14 +37,6 @@
     }
 }
 
-//-(void)setTaskId:(NSString *)taskId {
-//    
-//    if (!_taskId) {
-//        _taskId = taskId;
-//    }
-//
-//}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,6 +48,7 @@
                                            action:@selector(hideKeyBoard)];
     
     [self.view addGestureRecognizer:tapGesture];
+    [self loadSavedTaskTitle];
    
 }
 
@@ -86,31 +80,40 @@
         [self createTask];
         
     } else {// save updates only (for when taskId exists)
-        PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
-        [query whereKey:@"objectId" equalTo:self.taskId];
-        [query getFirstObjectInBackgroundWithBlock:^(PFObject *task, NSError *error){
-            if (!error) { //has a complete list
-                NSString *title = [taskTitleTextField text];
-                NSLog(@"title: %@", title);
-                if(title && [title length] > 0) {
-                    task[@"taskTitle"] = title;
-                } else {
-                    task[@"taskTitle"] = @"No Task Name";
-                }
-            } else {
-                NSLog(@"saved task is not in db for some reason");
-            }
-        }];
+
+        // Create a pointer to an object of class Point with id dlkj83d
+        PFObject *point = [PFObject objectWithoutDataWithClassName:@"tasks" objectId:self.taskId];
+        
+        // Set a new value on quantity
+        [point setObject:@"hell" forKey:@"taskTitle"];
+        
+        // Save
+        [point save];
     }
     NSLog(@"clicked save");
-    
+
 }
 
+- (IBAction)updateTitle:(id)sender {
+    NSString *str = [taskTitleTextField text];
+    newTitle = str;
 
--(void)hideKeyBoard {
+}
+
+- (void) hideKeyBoard {
     [taskTitleTextField resignFirstResponder];
 
 }
+
+- (void) loadSavedTaskTitle{
+    if (self.taskTitle) {
+        NSString *taskTitle = self.taskTitle;
+        [taskTitleTextField setText:taskTitle];
+    }
+}
+
+//update the title after editting.
+
 
 - (void)didReceiveMemoryWarning
 {

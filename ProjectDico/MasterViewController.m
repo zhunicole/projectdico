@@ -112,6 +112,7 @@
 {
     //get current taskId
     ivc.taskId = [self getObjectIdForTitle:taskTitle];
+    ivc.taskTitle = taskTitle;
 }
 
 
