@@ -36,6 +36,11 @@
     }
 }
 
+//@synthesize taskId;
+-(void)setTaskId:(NSString *)taskId {
+    NSLog(@"here");
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -47,6 +52,55 @@
                                            action:@selector(hideKeyBoard)];
     
     [self.view addGestureRecognizer:tapGesture];
+    
+    
+    //if the taskId doesn't exist yet in controller (not passed in from main)
+    if (self.taskId == 0) {  //if new task
+        PFObject *newTask = [PFObject objectWithClassName:@"tasks"];
+//       TODO figure this out newTask[@"username"] =
+        
+        newTask[@"taskTitle"] = @"No Task Name";
+        newTask[@"progress"] = 0;
+        [newTask saveInBackground];
+
+        NSLog(@"Task ID is: %@", [newTask objectForKey:@"objectId"] );
+        //TODO get and save tasks objectId
+        
+    } else {    //if accessing a saved task
+        PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
+        [query whereKey:@"objectId" equalTo:self.taskId];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if ([objects count] > 0) { //has a complete list
+                NSLog(@"found task");
+            } else {
+                NSLog(@"saved task is not in db for some reason");
+            }
+        }];
+
+    }
+    
+   
+}
+
+
+//SAVE task instead of outsource
+- (IBAction)saveTaskBtn:(id)sender {
+    NSLog(@"clicked save");
+    
+    //TODO save to DB here. dep on the information availablable
+    
+    
+    //check if taskID is in DB (called objectId in db)
+    
+    //else
+        //check if title
+            //save title
+            //save username
+    
+    
+        //else
+            //give title "Task name?"
 }
 
 

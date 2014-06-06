@@ -43,6 +43,11 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)newTaskBtn:(id)sender {
+//    NSLog(@"adding new task");
+    
+    
+}
 
 
 //- (void)insertNewObject:(id)sender

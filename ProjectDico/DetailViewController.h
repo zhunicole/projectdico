@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+
 
 @interface DetailViewController : UIViewController {
     UIImagePickerController *mediaPicker;
@@ -17,6 +19,9 @@
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UIButton *callDicoButton;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (nonatomic, strong) NSString *taskId;
+
 
 
 - (IBAction)callDico:(UIButton*)sender;

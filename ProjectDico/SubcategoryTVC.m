@@ -8,6 +8,7 @@
 
 #import "SubcategoryTVC.h"
 #import <Parse/Parse.h>
+#import "DetailViewController.h"
 
 @interface SubcategoryTVC()
 @property (nonatomic, strong) NSArray *SubCategoryArray;
@@ -57,6 +58,36 @@
     [cell.textLabel setText:[self.SubCategoryArray objectAtIndex:indexPath.row]];
     return cell;
 }
+
+
+
+
+#pragma mark - Navigation
+
+- (void)prepareVC:(DetailViewController *)ivc
+
+{
+
+    ivc.taskId = @"0";
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+//    int path = [[[self tableView] indexPathForSelectedRow] row];
+    
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        if (indexPath) {
+            if ([segue.identifier isEqualToString:@"showDetail"]) {
+//                    NSInteger categoryID = path;
+                [self prepareVC:segue.destinationViewController];
+
+            }
+        }
+    }
+}
+
 
 
 @end
