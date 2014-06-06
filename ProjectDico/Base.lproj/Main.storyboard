@@ -288,6 +288,9 @@
                                 <state key="normal" title="keyboardButton" image="keyboardBtn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="uTn-rt-G62" kind="push" id="uFV-qW-ihQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-dQ-cMK">
                                 <rect key="frame" x="39" y="374" width="100" height="100"/>
@@ -422,6 +425,50 @@
                 <exit id="Dhm-bB-Juc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2942" y="108"/>
+        </scene>
+        <!--Type Details View Controller-->
+        <scene sceneID="f9e-d7-UCP">
+            <objects>
+                <viewController id="uTn-rt-G62" customClass="TypeDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="slX-6p-icr"/>
+                        <viewControllerLayoutGuide type="bottom" id="me0-ze-Skd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rhr-QF-yZh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-z3-PYg" customClass="PlaceHolderForTextview">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="349"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.99215692281723022" green="0.70980393886566162" blue="0.3333333432674408" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thank you!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU6-X5-OFw">
+                                <rect key="frame" x="117" y="367" width="87" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="djz-V8-kSE">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="SW9-RH-N1T">
+                            <connections>
+                                <segue destination="PtM-NK-fBR" kind="unwind" unwindAction="goToDetailViewController:" id="cj1-Cz-3tq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="kLr-o8-Hie"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVk-8W-yhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PtM-NK-fBR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2915" y="792"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xcj-ZI-1xk">

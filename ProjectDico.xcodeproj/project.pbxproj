@@ -63,6 +63,8 @@
 		D1BB762A193A838D00679C7E /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7629193A838D00679C7E /* Cache.m */; };
 		D1BB762D193A979300679C7E /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB762C193A979300679C7E /* Helper.m */; };
 		D1BB7637193A996600679C7E /* TaskCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7636193A996600679C7E /* TaskCategory.m */; };
+		D1C6386D1941429D00C65E11 /* PlaceHolderForTextview.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C6386C1941429D00C65E11 /* PlaceHolderForTextview.m */; };
+		D1C638701941439700C65E11 /* TypeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C6386F1941439700C65E11 /* TypeDetailsViewController.m */; };
 		D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6E919315B500035FCFF /* CategoryTVC.m */; };
 		D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */; };
 /* End PBXBuildFile section */
@@ -161,6 +163,10 @@
 		D1BB762C193A979300679C7E /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		D1BB7635193A996600679C7E /* TaskCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCategory.h; sourceTree = "<group>"; };
 		D1BB7636193A996600679C7E /* TaskCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCategory.m; sourceTree = "<group>"; };
+		D1C6386B1941429D00C65E11 /* PlaceHolderForTextview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceHolderForTextview.h; sourceTree = "<group>"; };
+		D1C6386C1941429D00C65E11 /* PlaceHolderForTextview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceHolderForTextview.m; sourceTree = "<group>"; };
+		D1C6386E1941439700C65E11 /* TypeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDetailsViewController.h; sourceTree = "<group>"; };
+		D1C6386F1941439700C65E11 /* TypeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeDetailsViewController.m; sourceTree = "<group>"; };
 		D1E7C6E819315B500035FCFF /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		D1E7C6E919315B500035FCFF /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoryTVC.h; sourceTree = "<group>"; };
@@ -218,6 +224,10 @@
 				D128578E193E7C7100C84A9C /* CalendarController.m */,
 				D1285791193E7DE000C84A9C /* CameraController.h */,
 				D1285792193E7DE000C84A9C /* CameraController.m */,
+				D1C6386E1941439700C65E11 /* TypeDetailsViewController.h */,
+				D1C6386F1941439700C65E11 /* TypeDetailsViewController.m */,
+				D1C6386B1941429D00C65E11 /* PlaceHolderForTextview.h */,
+				D1C6386C1941429D00C65E11 /* PlaceHolderForTextview.m */,
 			);
 			name = TaskDetailControllers;
 			sourceTree = "<group>";
@@ -350,6 +360,8 @@
 		D171D39419316F12007F525D /* UserAccounts */ = {
 			isa = PBXGroup;
 			children = (
+				D176927F1932C3010096A662 /* TabBarController.h */,
+				D17692801932C3010096A662 /* TabBarController.m */,
 				D17692791932B7AF0096A662 /* WelcomeViewController.h */,
 				D176927A1932B7AF0096A662 /* WelcomeViewController.m */,
 				D171D39119316F08007F525D /* LoginViewController.h */,
@@ -398,8 +410,6 @@
 		D1E7C6EE19315B750035FCFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D176927F1932C3010096A662 /* TabBarController.h */,
-				D17692801932C3010096A662 /* TabBarController.m */,
 				D171D39419316F12007F525D /* UserAccounts */,
 				D13D21841931422800527710 /* MasterViewController.h */,
 				D13D21851931422800527710 /* MasterViewController.m */,
@@ -520,6 +530,7 @@
 				D13D21891931422800527710 /* DetailViewController.m in Sources */,
 				D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */,
 				D1BB762D193A979300679C7E /* Helper.m in Sources */,
+				D1C638701941439700C65E11 /* TypeDetailsViewController.m in Sources */,
 				D17692781932B60F0096A662 /* Reachability.m in Sources */,
 				D12857B8193EBEED00C84A9C /* MNCalendarViewDayCell.m in Sources */,
 				D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */,
@@ -529,6 +540,7 @@
 				D1BB7637193A996600679C7E /* TaskCategory.m in Sources */,
 				D13D21861931422800527710 /* MasterViewController.m in Sources */,
 				D17692811932C3010096A662 /* TabBarController.m in Sources */,
+				D1C6386D1941429D00C65E11 /* PlaceHolderForTextview.m in Sources */,
 				D1285793193E7DE000C84A9C /* CameraController.m in Sources */,
 				D17692731932B1D50096A662 /* Constants.m in Sources */,
 				D13D217D1931422800527710 /* AppDelegate.m in Sources */,
