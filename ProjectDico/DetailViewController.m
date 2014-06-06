@@ -39,6 +39,11 @@
 //@synthesize taskId;
 -(void)setTaskId:(NSString *)taskId {
     NSLog(@"here");
+    
+    if (!_taskId) {
+        _taskId = taskId;
+    }
+
 }
 
 - (void)viewDidLoad
@@ -55,15 +60,15 @@
     
     
     //if the taskId doesn't exist yet in controller (not passed in from main)
-    if (self.taskId == 0) {  //if new task
+    if ([self.taskId isEqualToString:@"0"]) {  //if new task
         PFObject *newTask = [PFObject objectWithClassName:@"tasks"];
 //       TODO figure this out newTask[@"username"] =
         
         newTask[@"taskTitle"] = @"No Task Name";
-        newTask[@"progress"] = 0;
-        [newTask saveInBackground];
+        newTask[@"progress"] = @0;
+        [newTask save];
 
-        NSLog(@"Task ID is: %@", [newTask objectForKey:@"objectId"] );
+        NSLog(@"Task ID is: %@", [newTask objectId] );
         //TODO get and save tasks objectId
         
     } else {    //if accessing a saved task

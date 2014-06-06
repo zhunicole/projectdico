@@ -126,13 +126,12 @@ static NSArray *other;
 }
 
 + (void) uploadSubCategories {
-    NSLog(@"loading subcategories");
     
     PFQuery *query = [PFQuery queryWithClassName:@"task_subcategories"];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] > 6) { //has a complete list
-            NSLog(@"Successfully retrieved %d objs.", objects.count);
+//            NSLog(@"Successfully retrieved %d objs.", objects.count);
         } else {
             // TODO fix this
             for (int i =0; i < 6; i++) {

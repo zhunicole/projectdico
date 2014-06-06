@@ -57,6 +57,7 @@
 		D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927A1932B7AF0096A662 /* WelcomeViewController.m */; };
 		D176927E1932B82D0096A662 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927D1932B82D0096A662 /* Utility.m */; };
 		D17692811932C3010096A662 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692801932C3010096A662 /* TabBarController.m */; };
+		D18A581E19422F44008E3100 /* StarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D18A581D19422F44008E3100 /* StarView.m */; };
 		D1A9B648193C11880008AE3D /* SubCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A9B647193C11880008AE3D /* SubCategory.m */; };
 		D1BB762A193A838D00679C7E /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7629193A838D00679C7E /* Cache.m */; };
 		D1BB762D193A979300679C7E /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB762C193A979300679C7E /* Helper.m */; };
@@ -152,6 +153,8 @@
 		D176927D1932B82D0096A662 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		D176927F1932C3010096A662 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		D17692801932C3010096A662 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		D18A581C19422F44008E3100 /* StarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarView.h; sourceTree = "<group>"; };
+		D18A581D19422F44008E3100 /* StarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarView.m; sourceTree = "<group>"; };
 		D1A9B646193C11880008AE3D /* SubCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategory.h; sourceTree = "<group>"; };
 		D1A9B647193C11880008AE3D /* SubCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategory.m; sourceTree = "<group>"; };
 		D1BB7628193A838D00679C7E /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
@@ -314,6 +317,7 @@
 		D13D21721931422800527710 /* ProjectDico */ = {
 			isa = PBXGroup;
 			children = (
+				D18A581F19422F48008E3100 /* Views */,
 				D12857BD193EBF1700C84A9C /* Calendar */,
 				D1BB7631193A984400679C7E /* Models */,
 				D17692741932B1E20096A662 /* Helper */,
@@ -392,6 +396,15 @@
 				D17692771932B60F0096A662 /* Reachability.m */,
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		D18A581F19422F48008E3100 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D18A581C19422F44008E3100 /* StarView.h */,
+				D18A581D19422F44008E3100 /* StarView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		D1BB7631193A984400679C7E /* Models */ = {
@@ -558,6 +571,7 @@
 				D12857BB193EBEED00C84A9C /* MNFastDateEnumeration.m in Sources */,
 				D1BB762A193A838D00679C7E /* Cache.m in Sources */,
 				D13D21791931422800527710 /* main.m in Sources */,
+				D18A581E19422F44008E3100 /* StarView.m in Sources */,
 				D128578F193E7C7100C84A9C /* CalendarController.m in Sources */,
 				D1A9B648193C11880008AE3D /* SubCategory.m in Sources */,
 				D12857BA193EBEED00C84A9C /* MNCalendarViewWeekdayCell.m in Sources */,
