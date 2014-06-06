@@ -95,4 +95,10 @@
 //    [self startCameraControllerFromViewController: self
 //                                    usingDelegate: self];
 //}
+
+
+
+- (IBAction)goToDetailViewController :(UIStoryboardSegue*)segue {
+    
+}
 @end
