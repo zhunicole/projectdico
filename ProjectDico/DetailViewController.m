@@ -40,6 +40,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+//    
+//    [callDicoButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,15 +51,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-//VOICE
+static NSString * const kDicoNumber = @"6263846965";
 
-//
-//- (IBAction)voiceRecord:(id)sender {
-//    [RecordController setUpSpeech];
-//    
-//}
-//
-//
+- (IBAction)callDico:(UIButton*)sender {
+    NSLog(@"callling");
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@", kDicoNumber]];
+    
+//    if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
+        [[UIApplication sharedApplication] openURL:phoneUrl];
+//    }
+}
+
 //
 ////CAMERA
 //
