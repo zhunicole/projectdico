@@ -10,6 +10,10 @@
 #import "PlaceHolderForTextview.h"
 
 @interface TypeDetailsViewController : UIViewController {
+    
+  
+    __weak IBOutlet PlaceHolderForTextview *taskDetailTextField;
+
 }
 
 @end

@@ -58,6 +58,7 @@
 		D176927E1932B82D0096A662 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927D1932B82D0096A662 /* Utility.m */; };
 		D17692811932C3010096A662 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692801932C3010096A662 /* TabBarController.m */; };
 		D18A581E19422F44008E3100 /* StarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D18A581D19422F44008E3100 /* StarView.m */; };
+		D18A5822194255A8008E3100 /* FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18A5821194255A8008E3100 /* FeedbackController.m */; };
 		D1A9B648193C11880008AE3D /* SubCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A9B647193C11880008AE3D /* SubCategory.m */; };
 		D1BB762A193A838D00679C7E /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7629193A838D00679C7E /* Cache.m */; };
 		D1BB762D193A979300679C7E /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB762C193A979300679C7E /* Helper.m */; };
@@ -155,6 +156,8 @@
 		D17692801932C3010096A662 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		D18A581C19422F44008E3100 /* StarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarView.h; sourceTree = "<group>"; };
 		D18A581D19422F44008E3100 /* StarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarView.m; sourceTree = "<group>"; };
+		D18A5820194255A8008E3100 /* FeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackController.h; sourceTree = "<group>"; };
+		D18A5821194255A8008E3100 /* FeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackController.m; sourceTree = "<group>"; };
 		D1A9B646193C11880008AE3D /* SubCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategory.h; sourceTree = "<group>"; };
 		D1A9B647193C11880008AE3D /* SubCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategory.m; sourceTree = "<group>"; };
 		D1BB7628193A838D00679C7E /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 		D1E7C6EE19315B750035FCFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D18A5820194255A8008E3100 /* FeedbackController.h */,
+				D18A5821194255A8008E3100 /* FeedbackController.m */,
 				D171D39419316F12007F525D /* UserAccounts */,
 				D1C6387119414DD000C65E11 /* MainControllers */,
 				D1285790193E7C7D00C84A9C /* TaskDetailControllers */,
@@ -576,6 +581,7 @@
 				D1A9B648193C11880008AE3D /* SubCategory.m in Sources */,
 				D12857BA193EBEED00C84A9C /* MNCalendarViewWeekdayCell.m in Sources */,
 				D176927E1932B82D0096A662 /* Utility.m in Sources */,
+				D18A5822194255A8008E3100 /* FeedbackController.m in Sources */,
 				D12857B9193EBEED00C84A9C /* MNCalendarViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

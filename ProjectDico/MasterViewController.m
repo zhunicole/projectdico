@@ -55,7 +55,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            [self.masterTable reloadData];   // Reload table
+//            [self.masterTable reloadData];   // Reload table
             
             self.TasksArray = [[NSMutableArray alloc] initWithCapacity:objects.count];
 
@@ -84,7 +84,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 1;
     
 }
 

@@ -45,35 +45,42 @@
     return bezierPath;
 }
 
-+ (UIBezierPath *)stars:(NSUInteger)numberOfStars shapeInFrame:(CGRect)originalFrame
+static const int kNumOfStars = 5;
++ (UIBezierPath *)solidStars:(NSInteger)numSolid shapeInFrame:(CGRect)originalFrame
 {
     // divide the original frame into equally sized frames
-    CGFloat w = originalFrame.size.width/numberOfStars;
+    CGFloat w = originalFrame.size.width/kNumOfStars;
     CGRect babyFrame = CGRectMake(0, 0, w, originalFrame.size.height);
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     
     //TODO do later
-//    for (int i=0; i < numberOfStars; i++) {
-//        // get the star shape
-//        UIBezierPath* startPath = [UIBezierPath starShape:babyFrame];
-//        // move it to the desired location
-//        [startPath applyTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, i*w, 0)];
-//        // add the path
-//        [bezierPath appendPath:startPath];
-//    }
+    for (int i=0; i < kNumOfStars; i++) {
+        // get the star shape
+        UIBezierPath* startPath = [self starShape:babyFrame];
+        // move it to the desired location
+        [startPath applyTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, i*w, 0)];
+        // add the path
+        if (i< numSolid)[startPath fill];
+        
+        [bezierPath appendPath:startPath];
+    }
     
     return bezierPath;
 }
 
 - (void)drawRect:(CGRect)rect
 {
+        //basically put buttons over position of stars,
+        //dep on button clicked, draw that array fo stars.
 
-    UIBezierPath *star = [StarView starShape:self.bounds];
+//    UIBezierPath *star = [StarView starShape:self.bounds];
+    UIBezierPath *starArray = [StarView solidStars:3 shapeInFrame:self.bounds];
     
-    [star fill];
-    [star stroke];
-    
+
+//    [star stroke];
+    [starArray stroke];
 }
+
 
 
 
