@@ -113,6 +113,10 @@ static NSArray *other;
             return scheduling;
             
             break;
+       
+        case 6:
+            
+            return other;
 
         default:
             
@@ -134,7 +138,7 @@ static NSArray *other;
 //            NSLog(@"Successfully retrieved %d objs.", objects.count);
         } else {
             // TODO fix this
-            for (int i =0; i < 6; i++) {
+            for (int i = 0; i < 7; i++) {
                 NSLog(@"Adding homemaintenace subcategory");
                 PFObject *subcategories = [PFObject objectWithClassName:@"task_subcategories"];
                 subcategories[@"taskCategory"] = [NSNumber numberWithInteger:i];
