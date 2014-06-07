@@ -16,7 +16,8 @@
     calendarView.selectedDate = [NSDate date];
     NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow: -(60.0f*60.0f*24.0f)];
     calendarView.selectedDate = yesterday;
-    NSLog(@"selected date: %@",calendarView.selectedDate);
+//    NSLog(@"selected date: %@",calendarView.selectedDate);
+    date = calendarView.selectedDate;
 }
 
 
@@ -63,16 +64,33 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component {
     if (component == 0) {
-        NSString *selectedSTring = [hourArray objectAtIndex:row];
-        NSLog(@"selected hour: %@", selectedSTring);
+        NSString *selectedString = [hourArray objectAtIndex:row];
+        hour = selectedString;
     } else if (component == 1) {
         NSString *selectedSTring = [minuteArray objectAtIndex:row];
-        NSLog(@"selected hour: %@", selectedSTring);
+        minute = selectedSTring;
     } else {
         NSString *selectedSTring = [AMPMArray objectAtIndex:row];
-        NSLog(@"selected hour: %@", selectedSTring);
-
+        AMPM = selectedSTring;
     }
+
+}
+- (IBAction)scheduleCallBtn:(id)sender {
+    
+    NSMutableString *dateTime = [NSMutableString stringWithFormat:@""];
+    
+    hour ? [dateTime appendString:hour] : [dateTime appendString:@"1"];
+    [dateTime appendString:@":"];
+    minute ? [dateTime appendString:minute] :  [dateTime appendString:@"00"];
+    AMPM ? [dateTime appendString:AMPM] :  [dateTime appendString:@"AM"];
+
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please confirm your call on:"
+                                                    message:dateTime
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 
 }
 

@@ -17,6 +17,11 @@
     NSArray *hourArray;
     NSArray *minuteArray;
     NSArray *AMPMArray;
+    
+    NSString *hour;
+    NSString *minute;
+    NSString *AMPM;
+    NSDate *date;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *calendarView;

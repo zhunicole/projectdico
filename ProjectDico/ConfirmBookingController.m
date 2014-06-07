@@ -27,11 +27,9 @@
                 NSNumber *number = object[@"progress"];
                 int value = [number intValue];
                 NSNumber *newProgress = [NSNumber numberWithInt:value + 1];
-                
-                PFObject *newTask = [PFObject objectWithClassName:@"tasks"];
-                newTask[@"taskTitle"] = object[@"taskTitle"];
-                newTask[@"progress"] = newProgress;
-                [newTask saveInBackground];
+
+                object[@"progress"] = newProgress;
+                [object saveInBackground];
                 
             }
             

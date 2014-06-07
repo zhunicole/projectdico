@@ -52,7 +52,8 @@
                 self.TasksArray = [[NSMutableArray alloc] initWithCapacity:objects.count];
                 for (PFObject *object in objects) {
                     NSString *title = object[@"taskTitle"];
-                    if(title)  [self.TasksArray addObject:title] ;           // title is nil?? store results
+                    
+                    if(title && ![self.TasksArray containsObject:title])  [self.TasksArray addObject:title] ;           // title is nil?? store results
                 }
                 [self.tableView reloadData];   // Reload table
                 
