@@ -602,10 +602,10 @@
             </objects>
             <point key="canvasLocation" x="-592" y="-703"/>
         </scene>
-        <!--Confirm Booking Controller-->
+        <!--View Controller-->
         <scene sceneID="1pB-PZ-zt1">
             <objects>
-                <viewController id="hht-7a-iZx" customClass="ConfirmBookingController" sceneMemberID="viewController">
+                <viewController id="hht-7a-iZx" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eyw-uE-vdG"/>
                         <viewControllerLayoutGuide type="bottom" id="YM4-qK-n7a"/>
@@ -715,10 +715,10 @@
             </objects>
             <point key="canvasLocation" x="2443" y="-581"/>
         </scene>
-        <!--View Controller-->
+        <!--Confirm Booking Controller-->
         <scene sceneID="T8t-Du-GNk">
             <objects>
-                <viewController id="oru-QP-4oY" sceneMemberID="viewController">
+                <viewController id="oru-QP-4oY" customClass="ConfirmBookingController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mY3-Qm-vdn"/>
                         <viewControllerLayoutGuide type="bottom" id="hNB-bK-3um"/>
@@ -731,8 +731,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2D-dn-h9n">
-                                <rect key="frame" x="153" y="392" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2D-dn-h9n">
+                                <rect key="frame" x="145" y="392" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="X">
@@ -743,6 +743,11 @@
                                     <segue destination="zI7-IN-blS" kind="unwind" unwindAction="goToMasterViewController:" id="sYi-Iz-Sk0"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="prE-AW-d52" customClass="StarView">
+                                <rect key="frame" x="91" y="316" width="138" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

@@ -11,6 +11,6 @@
 @interface StarView : UIView
 
 
-+ (UIBezierPath *)starShape:(CGRect)originalFrame;
-+ (UIBezierPath *)stars:(NSUInteger)numberOfStars shapeInFrame:(CGRect)originalFrame;
+//+ (UIBezierPath *)starShape:(CGRect)originalFrame;
+//+ (UIBezierPath *)stars:(NSUInteger)numberOfStars shapeInFrame:(CGRect)originalFrame;
 @end

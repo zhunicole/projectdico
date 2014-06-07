@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConfirmBookingController : UIViewController
+@interface ConfirmBookingController : UIViewController {
+    NSString *taskObjectID;
+}
+
+
 
 @end

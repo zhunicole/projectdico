@@ -11,7 +11,6 @@
 
 
 @interface StarView()
-@property (nonatomic) CGFloat faceCardScaleFactor;
 @end
 
 @implementation StarView
@@ -19,15 +18,13 @@
 #pragma mark - Drawing
 
 
-+ (CGRect)maximumSquareFrameThatFits:(CGRect)frame;
+- (UIBezierPath *)starShape:(CGRect)originalFrame
 {
-    CGFloat a = MIN(frame.size.width, frame.size.height);
-    return CGRectMake(frame.size.width/2 - a/2, frame.size.height/2 - a/2, a, a);
-}
-
-+ (UIBezierPath *)starShape:(CGRect)originalFrame
-{
-    CGRect frame = [self maximumSquareFrameThatFits:originalFrame];
+    
+    CGFloat a = MIN(originalFrame.size.width, originalFrame.size.height);
+    CGRect frame = CGRectMake(originalFrame.size.width/2 - a/2, originalFrame.size.height/2 - a/2, a, a);
+    
+//    CGRect frame = [self maximumSquareFrameThatFits:originalFrame];
     
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint: CGPointMake(CGRectGetMinX(frame) + 0.50000 * CGRectGetWidth(frame), CGRectGetMinY(frame) + 0.05000 * CGRectGetHeight(frame))];
@@ -46,22 +43,16 @@
 }
 
 static const int kNumOfStars = 5;
-+ (UIBezierPath *)solidStars:(NSInteger)numSolid shapeInFrame:(CGRect)originalFrame
+- (UIBezierPath *)solidStars:(NSInteger)numSolid shapeInFrame:(CGRect)originalFrame
 {
-    // divide the original frame into equally sized frames
     CGFloat w = originalFrame.size.width/kNumOfStars;
     CGRect babyFrame = CGRectMake(0, 0, w, originalFrame.size.height);
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
-    
-    //TODO do later
     for (int i=0; i < kNumOfStars; i++) {
-        // get the star shape
         UIBezierPath* startPath = [self starShape:babyFrame];
-        // move it to the desired location
         [startPath applyTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, i*w, 0)];
-        // add the path
+        [[UIColor whiteColor] setFill];
         if (i< numSolid)[startPath fill];
-        
         [bezierPath appendPath:startPath];
     }
     
@@ -73,12 +64,10 @@ static const int kNumOfStars = 5;
         //basically put buttons over position of stars,
         //dep on button clicked, draw that array fo stars.
 
-    UIBezierPath *star = [StarView starShape:self.bounds];
-//    UIBezierPath *starArray = [StarView solidStars:3 shapeInFrame:self.bounds];
-    
+    UIBezierPath *starArray = [self solidStars:4 shapeInFrame:self.bounds];
 
-    [star stroke];
-//    [starArray stroke];
+    [[UIColor whiteColor]setStroke];
+    [starArray stroke];
 }
 
 
