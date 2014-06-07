@@ -64,7 +64,6 @@
 }
 
 - (void)handlePush:(NSDictionary *)launchOptions {
-    NSLog(@"annoying handle push function");
 
 }
 
@@ -115,11 +114,8 @@
 
 
 - (void)presentLoginViewControllerAnimated:(BOOL)animated {
-    NSLog(@"presentLoginViewController");
     LoginViewController *loginViewController = [[LoginViewController alloc] init];
-//    [loginViewController setDelegate:self];
-//    loginViewController.fields = PFLogInFieldsFacebook;
-//    loginViewController.facebookPermissions = @[ @"user_about_me" ];
+
     
     [self.welcomeViewController presentViewController:loginViewController animated:NO completion:nil];
 }
@@ -129,20 +125,8 @@
 }
 
 - (void)logOut {
-    NSLog(@"logging out");
-    // TODO clear cache
+
     [[Cache sharedCache] clear];
-    
-    // clear NSUserDefaults
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kPAPUserDefaultsCacheFacebookFriendsKey];
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kPAPUserDefaultsActivityFeedViewControllerLastRefreshKey];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    // Unsubscribe from push notifications by removing the user association from the current installation.
-//    [[PFInstallation currentInstallation] removeObjectForKey:kPAPInstallationUserKey];
-//    [[PFInstallation currentInstallation] saveInBackground];
-//    
-//    // Clear all caches
     [PFQuery clearAllCachedResults];
     
     // Log out
@@ -153,8 +137,6 @@
     
     [self presentLoginViewController];
     
-//    self.homeViewController = nil;
-//    self.activityViewController = nil;
 }
 
 
@@ -173,16 +155,13 @@
 
 
 - (void)facebookRequestDidLoad:(id)result {
-    NSLog(@"fbrequest did load");
 
 }
 
 - (void)facebookRequestDidFailWithError:(NSError *)error {
-    NSLog(@"Facebook error: %@", error);
     
     if ([PFUser currentUser]) {
         if ([[error userInfo][@"error"][@"type"] isEqualToString:@"OAuthException"]) {
-            NSLog(@"The Facebook token was invalidated. Logging out.");
             [self logOut];
         }
     }
@@ -203,7 +182,6 @@
 
 
 - (void) monitorReachability {
-    NSLog(@"monitoring reachability");
 
 }
 

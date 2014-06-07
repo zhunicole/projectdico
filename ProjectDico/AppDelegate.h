@@ -10,7 +10,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, NSURLConnectionDataDelegate, UITabBarControllerDelegate>
 
-//TODO missing , PFLogInViewControllerDelegate
 
 @property (strong, nonatomic) UIWindow *window;
 

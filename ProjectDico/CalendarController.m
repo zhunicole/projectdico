@@ -16,7 +16,6 @@
     calendarView.selectedDate = [NSDate date];
     NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow: -(60.0f*60.0f*24.0f)];
     calendarView.selectedDate = yesterday;
-//    NSLog(@"selected date: %@",calendarView.selectedDate);
     date = calendarView.selectedDate;
 }
 

@@ -30,7 +30,6 @@
             //do nothing
         } else {
             // Log details of the failure
-            NSLog(@"Adding categories");
             PFObject *categories = [PFObject objectWithClassName:@"task_categories"];
             
             NSArray *array = @[@"Home Maintenance", @"Cleaning", @"Yard Work", @"Groceries", @"Pick-up And Delivery", @"Scheduling", @"Other"];

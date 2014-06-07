@@ -56,11 +56,10 @@
 -(void) createTask {
     if ([self.taskId isEqualToString:@"0"]) {  //if new task
         PFObject *newTask = [PFObject objectWithClassName:@"tasks"];
-        //       TODO figure this out newTask[@"username"] =
         newTask[@"progress"] = @0;
         
         NSString *title = [taskTitleTextField text];
-        NSLog(@"title: %@", title);
+
         if([title length]>0) {
             newTask[@"taskTitle"] = title;
         } else {
@@ -69,7 +68,7 @@
 
         [newTask save];
         self.taskId = [newTask objectId];
-        NSLog(@"Task ID is: %@", [newTask objectId] );
+
     }
 
 }
@@ -90,7 +89,7 @@
         // Save
         [point save];
     }
-    NSLog(@"clicked save");
+
 }
 
 - (IBAction)updateTitle:(id)sender {
@@ -123,7 +122,7 @@
 static NSString * const kDicoNumber = @"6263846965";
 
 - (IBAction)callDico:(UIButton*)sender {
-    NSLog(@"callling");
+
     NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@", kDicoNumber]];
     
     [[UIApplication sharedApplication] openURL:phoneUrl];

@@ -44,7 +44,7 @@
 - (void) viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    [self.tableView reloadData];   // Reload table
+//    [self.tableView reloadData];   // Reload table
 }
 
 - (void)setTasksArray{
@@ -64,7 +64,7 @@
                 [self.tableView reloadData];   // Reload table
                 
             } else {
-                NSLog(@"Parse errro");
+                NSLog(@"Parse error");
             }
         }];
     }
@@ -171,7 +171,7 @@
 #pragma mark - Navigation
 
 - (NSString *)getObjectIdForTitle: (NSString *) taskTitle {
-    NSLog(@"taskTitle: %@", taskTitle);
+
     PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
     [query whereKey:@"taskTitle" equalTo:taskTitle];
     

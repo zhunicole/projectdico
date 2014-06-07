@@ -1,5 +1,34 @@
 iOS only. 
 
+
+Hello, you may have to quit and relaunch the app if it freezes. 
+
+
+Notes about my implementation: 
+
+
+HOMEPAGE
+DetailsPage
+
+CALENDAR
+- built week logic
+- implemented the UI/style attributes
+- used a tutorial for the calendar dates logic (cited)
+
+
+TYPE DETAILS
+calling (trivial)
+pictures (animated, standard hover over)
+Categories and selection
+FBIntegration
+Rating (on static page but uiview is uibezier generated)
+
+
+
+
+Recommended Features to Try:
+
+
 Categories and Subcategories of tasks are uploaded via code, then cached, updated, and retrieved when needed. 
 some caching of query calls from parse
 
@@ -24,11 +53,6 @@ the following works for parse: but parse is down
 
 Main features: fully functional + DB integration
 
-HomePage
-DetailsPage
-Calendar
-Categories and selection
-FBIntegration
-Rating
 
 Recommended tasks:
+right now if you outsource, you increment all of them (i can't update parse manually when you grade)

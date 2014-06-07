@@ -69,20 +69,6 @@ static const int kNumCategories = 7;
 }
 
 
-#pragma mark - UITableViewDelegate
-
-/* TODO For ipad*/
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    id detailVC = [self.splitViewController.viewControllers lastObject];
-//    if ([detailVC isKindOfClass:[UINavigationController class]]) {
-//        detailVC = [((UINavigationController *)detailVC).viewControllers firstObject];
-//    }
-//    if ([detailVC isKindOfClass:[PhotoViewController class]]) {
-//        Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//        [self prepareVC:detailVC toDisplayPhoto:photo];
-//    }
-//}
 
 
 #pragma mark - Navigation

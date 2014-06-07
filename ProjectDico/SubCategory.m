@@ -135,11 +135,8 @@ static NSArray *other;
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] > 6) { //has a complete list
-//            NSLog(@"Successfully retrieved %d objs.", objects.count);
         } else {
-            // TODO fix this
             for (int i = 0; i < 7; i++) {
-                NSLog(@"Adding homemaintenace subcategory");
                 PFObject *subcategories = [PFObject objectWithClassName:@"task_subcategories"];
                 subcategories[@"taskCategory"] = [NSNumber numberWithInteger:i];
                 subcategories[@"list"] = [self getSubcategoriesFor:i];
