@@ -147,7 +147,6 @@ static NSString * const kDicoNumber = @"6263846965";
     } else {
         mediaPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         [self presentViewController:mediaPicker animated:YES completion:nil];
-
     }
 }
 

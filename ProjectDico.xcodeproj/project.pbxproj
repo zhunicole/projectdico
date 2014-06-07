@@ -59,6 +59,7 @@
 		D17692811932C3010096A662 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692801932C3010096A662 /* TabBarController.m */; };
 		D18A581E19422F44008E3100 /* StarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D18A581D19422F44008E3100 /* StarView.m */; };
 		D18A5822194255A8008E3100 /* FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18A5821194255A8008E3100 /* FeedbackController.m */; };
+		D1A2D6271942ADA100404803 /* ConfirmBookingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A2D6261942ADA100404803 /* ConfirmBookingController.m */; };
 		D1A9B648193C11880008AE3D /* SubCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A9B647193C11880008AE3D /* SubCategory.m */; };
 		D1BB762A193A838D00679C7E /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB7629193A838D00679C7E /* Cache.m */; };
 		D1BB762D193A979300679C7E /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BB762C193A979300679C7E /* Helper.m */; };
@@ -158,6 +159,8 @@
 		D18A581D19422F44008E3100 /* StarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarView.m; sourceTree = "<group>"; };
 		D18A5820194255A8008E3100 /* FeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackController.h; sourceTree = "<group>"; };
 		D18A5821194255A8008E3100 /* FeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackController.m; sourceTree = "<group>"; };
+		D1A2D6251942ADA100404803 /* ConfirmBookingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmBookingController.h; sourceTree = "<group>"; };
+		D1A2D6261942ADA100404803 /* ConfirmBookingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmBookingController.m; sourceTree = "<group>"; };
 		D1A9B646193C11880008AE3D /* SubCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategory.h; sourceTree = "<group>"; };
 		D1A9B647193C11880008AE3D /* SubCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategory.m; sourceTree = "<group>"; };
 		D1BB7628193A838D00679C7E /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 		D1285790193E7C7D00C84A9C /* TaskDetailControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D1A2D6251942ADA100404803 /* ConfirmBookingController.h */,
+				D1A2D6261942ADA100404803 /* ConfirmBookingController.m */,
 				D13D21871931422800527710 /* DetailViewController.h */,
 				D13D21881931422800527710 /* DetailViewController.m */,
 				D1C6387419417EB100C65E11 /* takePhoto.h */,
@@ -556,6 +561,7 @@
 				D13D21891931422800527710 /* DetailViewController.m in Sources */,
 				D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */,
 				D1BB762D193A979300679C7E /* Helper.m in Sources */,
+				D1A2D6271942ADA100404803 /* ConfirmBookingController.m in Sources */,
 				D1C638701941439700C65E11 /* TypeDetailsViewController.m in Sources */,
 				D17692781932B60F0096A662 /* Reachability.m in Sources */,
 				D12857B8193EBEED00C84A9C /* MNCalendarViewDayCell.m in Sources */,
