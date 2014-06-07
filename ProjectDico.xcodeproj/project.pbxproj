@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D128578F193E7C7100C84A9C /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D128578E193E7C7100C84A9C /* CalendarController.m */; };
-		D1285793193E7DE000C84A9C /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1285792193E7DE000C84A9C /* CameraController.m */; };
 		D1285799193E835500C84A9C /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1285795193E835500C84A9C /* AcousticModelEnglish.bundle */; };
 		D128579A193E835500C84A9C /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1285796193E835500C84A9C /* AcousticModelSpanish.bundle */; };
-		D128579B193E835500C84A9C /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1285797193E835500C84A9C /* OpenEars.framework */; };
 		D128579C193E835500C84A9C /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1285798193E835500C84A9C /* Slt.framework */; };
 		D128579E193E836900C84A9C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D128579D193E836900C84A9C /* AVFoundation.framework */; };
 		D12857B5193EBEED00C84A9C /* MNCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12857A6193EBEED00C84A9C /* MNCalendarHeaderView.m */; };
@@ -51,7 +49,6 @@
 		D171D38C193166FF007F525D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D171D38B193166FE007F525D /* SystemConfiguration.framework */; };
 		D171D39019316B1E007F525D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D171D38F19316B1E007F525D /* FacebookSDK.framework */; };
 		D171D39319316F08007F525D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D171D39219316F08007F525D /* LoginViewController.m */; };
-		D171D39719317150007F525D /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D171D39619317150007F525D /* UserDetailsViewController.m */; };
 		D17692731932B1D50096A662 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692721932B1D50096A662 /* Constants.m */; };
 		D17692781932B60F0096A662 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D17692771932B60F0096A662 /* Reachability.m */; };
 		D176927B1932B7AF0096A662 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176927A1932B7AF0096A662 /* WelcomeViewController.m */; };
@@ -67,7 +64,6 @@
 		D1C6386D1941429D00C65E11 /* PlaceHolderForTextview.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C6386C1941429D00C65E11 /* PlaceHolderForTextview.m */; };
 		D1C638701941439700C65E11 /* TypeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C6386F1941439700C65E11 /* TypeDetailsViewController.m */; };
 		D1C638731941726A00C65E11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C638721941726A00C65E11 /* Images.xcassets */; };
-		D1C6387619417EB100C65E11 /* takePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C6387519417EB100C65E11 /* takePhoto.m */; };
 		D1E7C6EA19315B500035FCFF /* CategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6E919315B500035FCFF /* CategoryTVC.m */; };
 		D1E7C6ED19315B650035FCFF /* SubcategoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7C6EC19315B650035FCFF /* SubcategoryTVC.m */; };
 /* End PBXBuildFile section */
@@ -85,8 +81,6 @@
 /* Begin PBXFileReference section */
 		D128578D193E7C7100C84A9C /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
 		D128578E193E7C7100C84A9C /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarController.m; sourceTree = "<group>"; };
-		D1285791193E7DE000C84A9C /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
-		D1285792193E7DE000C84A9C /* CameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
 		D1285795193E835500C84A9C /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		D1285796193E835500C84A9C /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
 		D1285797193E835500C84A9C /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
@@ -143,8 +137,6 @@
 		D171D38F19316B1E007F525D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		D171D39119316F08007F525D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		D171D39219316F08007F525D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
-		D171D39519317150007F525D /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
-		D171D39619317150007F525D /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 		D17692711932B1D50096A662 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D17692721932B1D50096A662 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		D17692761932B60F0096A662 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -174,8 +166,6 @@
 		D1C6386E1941439700C65E11 /* TypeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDetailsViewController.h; sourceTree = "<group>"; };
 		D1C6386F1941439700C65E11 /* TypeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeDetailsViewController.m; sourceTree = "<group>"; };
 		D1C638721941726A00C65E11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D1C6387419417EB100C65E11 /* takePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = takePhoto.h; sourceTree = "<group>"; };
-		D1C6387519417EB100C65E11 /* takePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = takePhoto.m; sourceTree = "<group>"; };
 		D1E7C6E819315B500035FCFF /* CategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTVC.h; sourceTree = "<group>"; };
 		D1E7C6E919315B500035FCFF /* CategoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTVC.m; sourceTree = "<group>"; };
 		D1E7C6EB19315B650035FCFF /* SubcategoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoryTVC.h; sourceTree = "<group>"; };
@@ -200,7 +190,6 @@
 				D171D37E193166C2007F525D /* CFNetwork.framework in Frameworks */,
 				D171D37C193166BA007F525D /* AudioToolbox.framework in Frameworks */,
 				D13D21711931422800527710 /* CoreData.framework in Frameworks */,
-				D128579B193E835500C84A9C /* OpenEars.framework in Frameworks */,
 				D171D39019316B1E007F525D /* FacebookSDK.framework in Frameworks */,
 				D13D216F1931422800527710 /* UIKit.framework in Frameworks */,
 				D13D216B1931422800527710 /* Foundation.framework in Frameworks */,
@@ -229,12 +218,8 @@
 				D1A2D6261942ADA100404803 /* ConfirmBookingController.m */,
 				D13D21871931422800527710 /* DetailViewController.h */,
 				D13D21881931422800527710 /* DetailViewController.m */,
-				D1C6387419417EB100C65E11 /* takePhoto.h */,
-				D1C6387519417EB100C65E11 /* takePhoto.m */,
 				D128578D193E7C7100C84A9C /* CalendarController.h */,
 				D128578E193E7C7100C84A9C /* CalendarController.m */,
-				D1285791193E7DE000C84A9C /* CameraController.h */,
-				D1285792193E7DE000C84A9C /* CameraController.m */,
 				D1C6386E1941439700C65E11 /* TypeDetailsViewController.h */,
 				D1C6386F1941439700C65E11 /* TypeDetailsViewController.m */,
 				D1C6386B1941429D00C65E11 /* PlaceHolderForTextview.h */,
@@ -376,8 +361,6 @@
 				D176927A1932B7AF0096A662 /* WelcomeViewController.m */,
 				D171D39119316F08007F525D /* LoginViewController.h */,
 				D171D39219316F08007F525D /* LoginViewController.m */,
-				D171D39519317150007F525D /* UserDetailsViewController.h */,
-				D171D39619317150007F525D /* UserDetailsViewController.m */,
 			);
 			name = UserAccounts;
 			sourceTree = "<group>";
@@ -572,13 +555,10 @@
 				D13D21861931422800527710 /* MasterViewController.m in Sources */,
 				D17692811932C3010096A662 /* TabBarController.m in Sources */,
 				D1C6386D1941429D00C65E11 /* PlaceHolderForTextview.m in Sources */,
-				D1C6387619417EB100C65E11 /* takePhoto.m in Sources */,
-				D1285793193E7DE000C84A9C /* CameraController.m in Sources */,
 				D17692731932B1D50096A662 /* Constants.m in Sources */,
 				D13D217D1931422800527710 /* AppDelegate.m in Sources */,
 				D12857B5193EBEED00C84A9C /* MNCalendarHeaderView.m in Sources */,
 				D13D21831931422800527710 /* ProjectDico.xcdatamodeld in Sources */,
-				D171D39719317150007F525D /* UserDetailsViewController.m in Sources */,
 				D12857BB193EBEED00C84A9C /* MNFastDateEnumeration.m in Sources */,
 				D1BB762A193A838D00679C7E /* Cache.m in Sources */,
 				D13D21791931422800527710 /* main.m in Sources */,

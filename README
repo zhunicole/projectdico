@@ -1,58 +1,58 @@
-iOS only. 
+iPhone5 preferred
+
+Hello, you may have to quit and relaunch the app if it freezes (weird issue with Parse). That aside, this was fun. I got carried away with the design component and wanted to focus on UI over a hodge-podge of features. Please look through the files to see the extent of my implementations. 
+
+Thank you!
 
 
-Hello, you may have to quit and relaunch the app if it freezes. 
-
+Recommended Flows:
+- make a task and try all the detail inputs
+- quit and relaunch to see the main page get updated (ideally this would be done by the admin)
+- open your task and "outsource it"
+***feel free to go into Parse and change the "progress", as an admin would, to see status updates***
+***https://www.parse.com/apps/projectdico/**
 
 Notes about my implementation: 
 
+FB INTEGRATION
+- Integrated FB API to enable logins
 
 HOMEPAGE
-DetailsPage
-
-CALENDAR
-- built week logic
-- implemented the UI/style attributes
-- used a tutorial for the calendar dates logic (cited)
+- Using Parse to render/update everything. It is down at the moment, so I hope my update object functions work during testing.
 
 
-TYPE DETAILS
-calling (trivial)
-pictures (animated, standard hover over)
-Categories and selection
-FBIntegration
-Rating (on static page but uiview is uibezier generated)
+TASK CATEGORIES/SUBCATEGORIES
+- All data/logic is built on Parse (not hard coded)
 
 
+CALENDAR DETAILS
+	- built week, and date selection logic
+	- implemented the UI/style attributes
+	- used a tutorial for the calendar generating logic (cited)
+	
+	- TIME PICKER
+		- transformations
+
+OTHER DETAILS
+
+	TYPE DETAILS
+		- animations
+
+	TAKING/UPLOAD PHOTOS
+		- UIImagePicker
+		- extra animations
+
+	CALLING (trivial)
 
 
-Recommended Features to Try:
+ASSISTANT RATING 
+	- This page is static except for the stars, which are UIBezierPaths
+
+CACHING
+	- Some caching with task retrieval
+	- Categories and Subcategories of tasks are uploaded via code, then cached, updated, and retrieved when needed. 
 
 
-Categories and Subcategories of tasks are uploaded via code, then cached, updated, and retrieved when needed. 
-some caching of query calls from parse
-
-"Call me later option"
-Calendar scroll views: used Github for simple dates rendering
-						implemented own logic for date selection, current week, current dates
-						own graphics and UI
-
-Implemented Picker
-	- did transformation
-
-feedback/voting: uibezier
-
-
-appdel: animations and attr strings, styling with dicts ...
-
-
-the following works for parse: but parse is down
-
-
-
-
-Main features: fully functional + DB integration
-
-
-Recommended tasks:
-right now if you outsource, you increment all of them (i can't update parse manually when you grade)
+AppDelegate
+	- AttrStrings
+	- more animations
