@@ -96,7 +96,7 @@ static const int kNumCategories = 7;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    int path = [[[self tableView] indexPathForSelectedRow] row];
+    NSInteger path = [[[self tableView] indexPathForSelectedRow] row];
     
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
