@@ -21,7 +21,7 @@
 
 @end
 
-@implementation MasterViewController 
+@implementation MasterViewController
 
 - (void)awakeFromNib
 {
@@ -29,7 +29,7 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated{
-
+    
 }
 - (void)viewDidLoad
 {
@@ -46,6 +46,7 @@
         _TasksArray = [[NSMutableArray alloc] init];
         
         PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
+        query.cachePolicy = kPFCachePolicyNetworkElseCache;
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 self.TasksArray = [[NSMutableArray alloc] initWithCapacity:objects.count];
@@ -75,52 +76,87 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
+    
     return self.TasksArray.count;
-
+    
 }
 
 
 -(NSDate*) getDatefromTitle:(NSString*)title {
     PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
     [query whereKey:@"taskTitle" equalTo:title];
+    query.cachePolicy = kPFCachePolicyNetworkElseCache;
     NSArray *results = [query findObjects];
     PFObject *obj = [results objectAtIndex:0];
-    
     NSDate *date = [obj createdAt];
-
-    
     return date;
 }
 
-#define PHOTO_TAG 3
+-(NSInteger) getProgressfromTitle:(NSString*)title {
+    PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
+    [query whereKey:@"taskTitle" equalTo:title];
+    query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    NSArray *results = [query findObjects];
+    PFObject *obj = [results objectAtIndex:0];
+    NSInteger progress = [obj[@"progress"] integerValue];
+    
+    return progress;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
-    [cell.textLabel setText:[self.TasksArray objectAtIndex:indexPath.row]];
     
+    [cell.textLabel setText:[self.TasksArray objectAtIndex:indexPath.row]];
     NSString *title = [self.TasksArray objectAtIndex:indexPath.row];
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"EEE, MMM d, h:mm a"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Lasted Updated: %@", [dateFormat stringFromDate:[self getDatefromTitle:title]]];
-
-//    [cell.detailTextLabel setText:date];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [dateFormat stringFromDate:[self getDatefromTitle:title]]];
     
-
+    NSInteger progress = [self getProgressfromTitle:title];
+    [self updateImage:progress forCell:cell];
     
-//    CGRect cellView.frame = CGRectMake(0,0,150,50);
-    UIImage *theImage = [UIImage imageNamed:@"recordBtn.png"];//[UIImage imageWithContentsOfFile:imagePath];
-
-
-    CGRect rect = CGRectMake(150,150,150,50);
-    StarView *star = [StarView new];
-    [cell.contentView addSubview:star];
-    
-  
     return cell;
-
+    
 }
 
+-(void) updateImage:(NSInteger) progress forCell: (UITableViewCell*)cell {
+    switch (progress)
+    
+    {
+            //saved to Parse
+        case 0:
+            
+            cell.imageView.image = [UIImage imageNamed:@"onesDonut.png"];
+            
+            break;
+            
+        case 1: //outsource is clicked
+            
+            cell.imageView.image = [UIImage imageNamed:@"halfDonut.png"];
+            
+            break;
+            
+        case 3: //assistant is on it!
+            
+            cell.imageView.image = [UIImage imageNamed:@"thirdsDonut.png"];
+
+            break;
+
+        case 4://task is finished
+            
+            cell.imageView.image = [UIImage imageNamed:@"fullDonut.png"];
+            
+            break;
+
+        default:
+            
+            cell.imageView.image = [UIImage imageNamed:@"fullDonut.png"];
+            
+            break;
+            
+    }
+}
 
 
 
@@ -136,7 +172,7 @@
     NSArray *tasks=[query findObjects];
     PFObject *task = [tasks objectAtIndex:0];
     objectID = task.objectId;
-   
+    
     return objectID;
     
 }

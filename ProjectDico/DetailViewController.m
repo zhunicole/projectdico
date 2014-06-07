@@ -85,13 +85,12 @@
         PFObject *point = [PFObject objectWithoutDataWithClassName:@"tasks" objectId:self.taskId];
         
         // Set a new value on quantity
-        [point setObject:@"hell" forKey:@"taskTitle"];
+        [point setObject:[taskTitleTextField text] forKey:@"taskTitle"];
         
         // Save
         [point save];
     }
     NSLog(@"clicked save");
-
 }
 
 - (IBAction)updateTitle:(id)sender {
