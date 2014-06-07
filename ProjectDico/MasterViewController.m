@@ -11,6 +11,7 @@
 #import "DetailViewController.h"
 #import "TaskCategory.h"
 #import "SubCategory.h"
+#import "StarView.h"
 
 @interface MasterViewController ()
 
@@ -33,13 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [self.masterTable setDelegate:self];
-//    self.TasksArray;
     //load categories
     [TaskCategory uploadCategories];
     [SubCategory uploadSubCategories];
     [self setTasksArray];
-
     
 }
 
@@ -64,6 +62,7 @@
     }
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -82,11 +81,46 @@
 }
 
 
+-(NSDate*) getDatefromTitle:(NSString*)title {
+    PFQuery *query = [PFQuery queryWithClassName:@"tasks"];
+    [query whereKey:@"taskTitle" equalTo:title];
+    NSArray *results = [query findObjects];
+    PFObject *obj = [results objectAtIndex:0];
+    
+    NSDate *date = [obj createdAt];
+
+    
+    return date;
+}
+
+#define PHOTO_TAG 3
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
     [cell.textLabel setText:[self.TasksArray objectAtIndex:indexPath.row]];
+    
+    NSString *title = [self.TasksArray objectAtIndex:indexPath.row];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"EEE, MMM d, h:mm a"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Lasted Updated: %@", [dateFormat stringFromDate:[self getDatefromTitle:title]]];
+
+//    [cell.detailTextLabel setText:date];
+    
+
+    
+//    CGRect cellView.frame = CGRectMake(0,0,150,50);
+    UIImage *theImage = [UIImage imageNamed:@"recordBtn.png"];//[UIImage imageWithContentsOfFile:imagePath];
+
+
+    CGRect rect = CGRectMake(150,150,150,50);
+    StarView *star = [StarView new];
+    [cell.contentView addSubview:star];
+    
+  
     return cell;
+
 }
+
 
 
 

@@ -73,12 +73,12 @@ static const int kNumOfStars = 5;
         //basically put buttons over position of stars,
         //dep on button clicked, draw that array fo stars.
 
-//    UIBezierPath *star = [StarView starShape:self.bounds];
-    UIBezierPath *starArray = [StarView solidStars:3 shapeInFrame:self.bounds];
+    UIBezierPath *star = [StarView starShape:self.bounds];
+//    UIBezierPath *starArray = [StarView solidStars:3 shapeInFrame:self.bounds];
     
 
-//    [star stroke];
-    [starArray stroke];
+    [star stroke];
+//    [starArray stroke];
 }
 
 

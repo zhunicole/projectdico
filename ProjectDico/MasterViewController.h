@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MasterViewController : UITableViewController //<UITableViewDelegate , UITableViewDataSource>
-//
-//@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-//@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@interface MasterViewController : UITableViewController {
+
+}
 
 @end
