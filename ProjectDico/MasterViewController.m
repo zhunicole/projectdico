@@ -15,7 +15,6 @@
 
 @interface MasterViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *masterTable;
 @property (nonatomic, strong) NSMutableArray *TasksArray;
 
 
@@ -37,8 +36,15 @@
     //load categories
     [TaskCategory uploadCategories];
     [SubCategory uploadSubCategories];
+
     [self setTasksArray];
     
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];   // Reload table
 }
 
 - (void)setTasksArray{

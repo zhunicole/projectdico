@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "SubCategoryTVC.h"
 #import <Parse/Parse.h>
+#import "TaskCategory.h"
 
 @interface CategoryTVC ()
 
@@ -18,6 +19,11 @@
 @end
 
 @implementation CategoryTVC
+
+-(void) viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+}
 
 - (void)viewDidLoad
 {

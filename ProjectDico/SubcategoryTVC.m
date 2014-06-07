@@ -9,10 +9,12 @@
 #import "SubcategoryTVC.h"
 #import <Parse/Parse.h>
 #import "DetailViewController.h"
+#import "SubCategory.h"
 
 @interface SubcategoryTVC()
 @property (nonatomic, strong) NSArray *SubCategoryArray;
 @end
+
 
 
 
@@ -25,6 +27,9 @@
     [self setSubCategoryArray];
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
 
 
 #pragma mark - Table View
